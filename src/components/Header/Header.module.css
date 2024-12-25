@@ -1,0 +1,25 @@
+.header {
+    background-image: url("../../../src/assets/images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.welcomeTile {
+    background-color: #DE9B86;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.welcomeTile p {
+    color: #FFFFFF;
+    font-size: 4rem;
+}
+
+.bannerContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 20vh;
+}
