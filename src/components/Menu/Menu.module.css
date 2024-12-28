@@ -1,0 +1,54 @@
+.menu {}
+
+.mobileMenu {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+}
+
+.mobileMenuNavClosed {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mobileMenuNavOpened {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 0.75rem;
+}
+
+
+.hamburgerIconContainer {}
+
+.hamburgerText {
+    flex: 1;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.desktopMenuContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.desktopMenu {
+    display: flex;
+    justify-content: center;
+    padding-inline: 12rem;
+
+    gap: 2rem
+}
+
+.sectionLink {
+    flex: auto;
+    color: var(--peach);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+
+.sectionLink:hover {
+    color: var(--peachDarker);
+}

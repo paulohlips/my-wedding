@@ -11,6 +11,14 @@ export const Header = () => {
     )
 }
 
+const Banner = () => {
+    return (
+        <div className={styles.bannerContainer}>
+            <img src="../../../src/assets/images/monogram.png" />
+        </div>
+    )
+}
+
 const WelcomeTile = () => {
     return (
         <div className={styles.welcomeTile}>
@@ -19,11 +27,4 @@ const WelcomeTile = () => {
     )
 }
 
-const Banner = () => {
-    return (
-        <div className={styles.bannerContainer}>
-            <img src="../../../src/assets/images/monogram.png" />
-        </div>
-    )
-}
 

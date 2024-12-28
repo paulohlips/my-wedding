@@ -2,24 +2,32 @@
     background-image: url("../../../src/assets/images/background.png");
     background-size: cover;
     background-repeat: no-repeat;
+    height: 100%;
 }
 
 .welcomeTile {
-    background-color: #DE9B86;
-    height: 80px;
+    background-color: var(--peach);
+    height: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5vh;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
 }
 
 .welcomeTile p {
-    color: #FFFFFF;
-    font-size: 4rem;
+    color: var(--white);
+    font-size: 2rem;
 }
 
 .bannerContainer {
     display: flex;
     justify-content: center;
-    padding-top: 20vh;
+    padding-top: 10vh;
+}
+
+.bannerContainer>img {
+    max-height: 40vw;
 }
