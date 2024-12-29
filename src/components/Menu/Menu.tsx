@@ -40,17 +40,19 @@ const MobileMenu = () => {
                         <div className={styles.hamburgerIconContainer}>
                             <GiHamburgerMenu size={28} color='' onClick={handleIsClicked} />
                         </div>
-                        {/* <img src={icon} /> */}
+                        <img src={icon} />
                     </div>
                     :
-                    <nav className={styles.mobileMenuNavOpened} onClick={handleIsClicked}>
-                        <a className={styles.sectionLink} href="#"> Início</a>
-                        <a className={styles.sectionLink} href="#"> Nossa História</a>
-                        <a className={styles.sectionLink} href="#"> Sobre os Padrinhos</a>
-                        <a className={styles.sectionLink} href="#"> Mensagens aos noivos</a>
-                        <a className={styles.sectionLink} href="#"> Presentes</a>
-                        <a className={styles.sectionLink} href="#"> Confirmar Presença</a>
-                    </nav>
+                    <div className={styles.modal} onClick={handleIsClicked}>
+                        <nav className={styles.mobileMenuNavOpened} onClick={handleIsClicked}>
+                            <a className={styles.sectionLink} href="#"> Início</a>
+                            <a className={styles.sectionLink} href="#"> Nossa História</a>
+                            <a className={styles.sectionLink} href="#"> Sobre os Padrinhos</a>
+                            <a className={styles.sectionLink} href="#"> Mensagens aos noivos</a>
+                            <a className={styles.sectionLink} href="#"> Presentes</a>
+                            <a className={styles.sectionLink} href="#"> Confirmar Presença</a>
+                        </nav>
+                    </div>
             }
         </div >
     )
