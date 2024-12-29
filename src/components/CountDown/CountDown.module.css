@@ -1,0 +1,25 @@
+.countdown {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 4rem;
+    gap: 1rem;
+    height: 10vw;
+}
+
+.countdownValue {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdownValue>p {
+    font-size: 3rem;
+    background-color: var(--peach);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    width: 5rem;
+}

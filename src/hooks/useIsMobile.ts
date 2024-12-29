@@ -23,6 +23,5 @@ export const useIsMobile = () => {
             setIsMobile(true);
         }
     }, [screenWidth]); // Recalculate whenever screenWidth changes
-    console.log({ isMobile })
     return isMobile;
 };

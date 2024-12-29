@@ -1,3 +1,4 @@
+import { CountDown } from "../CountDown/CountDown"
 import { Menu } from "../Menu/Menu"
 import styles from './Header.module.css'
 
@@ -7,6 +8,7 @@ export const Header = () => {
             <Menu />
             <Banner />
             <WelcomeTile />
+            <CountDown />
         </div>
     )
 }
