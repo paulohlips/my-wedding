@@ -1,0 +1,27 @@
+.fiancesDisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+
+}
+
+.fiancesDisplay>img {
+    max-width: 50vw;
+}
+
+.fiancesTextTitle {
+    font-size: 2rem;
+    max-width: 70vw;
+    font-weight: bold;
+    padding: 1rem;
+    color: var(--rust);
+}
+
+.fiancesText {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    max-width: 70vw;
+    color: var(--peach);
+}
