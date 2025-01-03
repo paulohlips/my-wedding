@@ -29,7 +29,7 @@ export const Godparents = () => {
         <div className={styles.godParents}>
             <p className={styles.godParentsTitle}>Sobre os Padrinhos</p>
             <div className={styles.slides}>
-                <CgChevronLeft size={28} onClick={() => handleScroll('left')} />
+                <CgChevronLeft size={48} onClick={() => handleScroll('left')} />
                 <div className={styles.slidingWindow} ref={slideWindowContainer}>
                     {
                         mockedData.map(card => {
@@ -39,7 +39,7 @@ export const Godparents = () => {
                         })
                     }
                 </div>
-                <BiChevronRight size={28} onClick={() => handleScroll('right')} />
+                <BiChevronRight size={48} onClick={() => handleScroll('right')} />
             </div>
         </div>
     );
