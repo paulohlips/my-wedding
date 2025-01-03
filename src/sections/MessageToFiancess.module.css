@@ -1,0 +1,48 @@
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form>p {
+    font-size: 4rem;
+    text-align: center;
+    color: var(--rust);
+}
+
+.name {
+    color: var(--rust);
+    font-size: 2rem;
+}
+
+.form input {
+    height: 2rem;
+    width: 100%;
+    min-width: 40vw;
+    border-color: var(--peach);
+    box-sizing: content-box;
+    background-color: var(--peachLighter);
+    border-radius: 4px;
+    border-width: 0px;
+}
+
+.message {
+    color: var(--rust);
+    font-size: 2rem;
+}
+
+.message input {
+    height: 8rem;
+}
+
+form>button {
+    width: 6rem;
+    height: 3rem;
+    background-color: var(--rust);
+    border-radius: 4px;
+    border-width: 0px;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--white);
+}
