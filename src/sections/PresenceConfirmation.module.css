@@ -1,0 +1,37 @@
+.presenceConfirmation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.presenceConfirmation>p {
+    font-size: 4rem;
+    color: var(--rust);
+    padding-top: 3rem;
+}
+
+.radioSectionTitle {
+    font-size: 2rem;
+    color: var(--rust);
+    padding-top: 1rem;
+}
+
+.radioContainer {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.radioContainerItem>input {
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: red;
+}
+
+.radioContainerItem>label {
+    font-size: 2rem;
+    color: var(--rust);
+    padding-left: 0.8rem;
+}
