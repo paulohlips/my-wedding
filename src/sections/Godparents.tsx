@@ -34,7 +34,7 @@ export const Godparents = () => {
                     {
                         mockedData.map(card => {
                             return (
-                                <Card key={card.id} image={card.src} description={card.description} />
+                                <Card key={card.id} image={card.src} children={<p className={styles.cardDescription}>{card.description}</p>} />
                             )
                         })
                     }

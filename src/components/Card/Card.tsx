@@ -1,15 +1,16 @@
+import { ReactNode } from 'react';
 import styles from './Card.module.css'
 
 type CardTypeProps = {
     image: string
-    description: string
+    children?: ReactNode;
 }
 
-export const Card = ({ image, description }: CardTypeProps) => {
+export const Card = ({ image, children }: CardTypeProps) => {
     return (
         <div className={styles.card}>
             <img src={image} />
-            <p>{description}</p>
+            <div>{children}</div>
         </div>
     )
 }
