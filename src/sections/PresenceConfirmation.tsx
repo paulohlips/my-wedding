@@ -1,11 +1,19 @@
 import { useState } from "react"
 import styles from "./PresenceConfirmation.module.css"
+import { Modal } from "../components/Modal/Modal"
 
 export const PresenceConfirmation = () => {
     const [inviteAccepted, sentInviteAccepted] = useState<boolean>(false)
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 
     const handleInvited = (input: boolean) => {
         sentInviteAccepted(input)
+        setIsModalOpen(input)
+    }
+
+
+    const handleClose = () => {
+        setIsModalOpen(false);
     }
 
     return (
@@ -21,6 +29,7 @@ export const PresenceConfirmation = () => {
                             name="invite" value="option"
                             size={28}
                             onChange={() => handleInvited(true)}
+                            onClick={() => handleInvited(true)}
                         />
                         <label>Sim</label>
                     </div>
@@ -36,13 +45,13 @@ export const PresenceConfirmation = () => {
                     </div>
                 </div>
 
-                {inviteAccepted
-                    ? <div className={styles.confirmation}>
+                <Modal isOpen={isModalOpen} onClose={handleClose}>
+                    <div className={styles.confirmation}>
                         <p>Digite seu token de confirmação: </p>
                         <input type="text" />
-                        <button>Confirmar</button>
+                        <button onClick={() => handleInvited}>Confirmar</button>
                     </div>
-                    : null}
+                </Modal>
             </div>
         </div>
     )
