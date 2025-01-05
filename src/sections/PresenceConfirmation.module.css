@@ -4,6 +4,12 @@
     align-items: center;
 }
 
+.radioSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .presenceConfirmation>p {
     font-size: 4rem;
     color: var(--rust);
@@ -23,15 +29,56 @@
     padding-top: 1rem;
 }
 
-.radioContainerItem>input {
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
-    background-color: red;
-}
-
 .radioContainerItem>label {
     font-size: 2rem;
     color: var(--rust);
     padding-left: 0.8rem;
+}
+
+.confirmation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.confirmation>p {
+    font-size: 2rem;
+    color: var(--rust);
+    padding-top: 2rem;
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--rust);
+}
+
+input[type="radio"]:checked {
+    background-color: var(--peach);
+}
+
+.confirmation>input {
+    min-width: 20vw;
+    border-color: var(--peach);
+    box-sizing: content-box;
+    background-color: var(--peachLighter);
+    border-radius: 4px;
+    border-width: 0px;
+    font-size: 1.5rem;
+    padding: 0.25rem
+}
+
+.confirmation>button {
+    padding-inline: 2rem;
+    height: 3rem;
+    background-color: var(--rust);
+    border-radius: 4px;
+    border-width: 0px;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--white);
 }
