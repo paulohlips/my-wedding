@@ -25,6 +25,8 @@
     background-color: var(--peachLighter);
     border-radius: 4px;
     border-width: 0px;
+    font-size: 1.5rem;
+    padding: 0.25rem
 }
 
 .message {
@@ -32,12 +34,21 @@
     font-size: 2rem;
 }
 
-.message input {
-    height: 8rem;
+.message>textarea {
+    height: 6rem;
+    width: 100%;
+    min-width: 40vw;
+    border-color: var(--peach);
+    box-sizing: content-box;
+    background-color: var(--peachLighter);
+    border-radius: 4px;
+    border-width: 0px;
+    font-size: 1.5rem;
+    padding: 0.25rem
 }
 
-form>button {
-    width: 6rem;
+.submitButton {
+    padding-inline: 2rem;
     height: 3rem;
     background-color: var(--rust);
     border-radius: 4px;

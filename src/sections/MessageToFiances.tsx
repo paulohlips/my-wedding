@@ -1,4 +1,4 @@
-import styles from './MessageToFiancess.module.css'
+import styles from './MessageToFiances.module.css'
 
 export const MessageToFiances = () => {
     return (
@@ -11,9 +11,9 @@ export const MessageToFiances = () => {
                 </div>
                 <div className={styles.message}>
                     <p>Mensagem:</p>
-                    <input type="text" />
+                    <textarea />
                 </div>
-                <button type="submit">Enviar</button>
+                <button className={styles.submitButton} type="submit">Enviar</button>
             </form>
         </div>
     )
