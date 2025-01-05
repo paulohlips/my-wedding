@@ -1,0 +1,54 @@
+.map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map>p {
+    font-size: 4rem;
+    text-align: center;
+    color: var(--rust);
+}
+
+.address {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 40vw;
+    font-size: 2rem;
+    color: var(--peach);
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.locationIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.link {
+    display: flex;
+    flex-direction: column;
+}
+
+.link>a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.3rem;
+    text-decoration: none;
+}
+
+.link>a>p {
+    font-size: 1rem;
+    color: var(--peach);
+}
+
+.link>a>img {
+    height: 48px;
+
+}
