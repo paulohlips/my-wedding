@@ -11,12 +11,12 @@ import { Map } from './sections/Map/Map'
 export default function App() {
   return (
     <div>
-      <Gifts />
       <Header />
       <Fiances />
       <Godparents />
       <MessageToFiances />
       <Messages />
+      <Gifts />
       <PresenceConfirmation />
       <DressCode />
       <Map />
