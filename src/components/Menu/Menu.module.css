@@ -50,21 +50,21 @@
 .desktopMenuContainer {
     display: flex;
     justify-content: center;
+    background-color: var(--rust);
+    position: fixed;
 }
 
 .desktopMenu {
     display: flex;
     justify-content: center;
     padding-inline: 12rem;
-
     gap: 2rem
 }
 
 .sectionLink {
     flex: auto;
     color: var(--peach);
-    font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-decoration: none;
     padding-top: 1rem;
 }

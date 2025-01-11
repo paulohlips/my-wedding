@@ -14,12 +14,12 @@ const DesktopMenu = () => {
     return (
         <div className={styles.desktopMenuContainer}>
             <nav className={styles.desktopMenu}>
-                <a className={styles.sectionLink} href="#"> Início</a>
-                <a className={styles.sectionLink} href="#"> Nossa História</a>
-                <a className={styles.sectionLink} href="#"> Sobre os Padrinhos</a>
-                <a className={styles.sectionLink} href="#"> Mensagens aos noivos</a>
-                <a className={styles.sectionLink} href="#"> Presentes</a>
-                <a className={styles.sectionLink} href="#"> Confirmar Presença</a>
+                <a className={styles.sectionLink} href="#">Nossa História</a>
+                <a className={styles.sectionLink} href="#">Padrinhos</a>
+                <a className={styles.sectionLink} href="#">Mensagens aos noivos</a>
+                <a className={styles.sectionLink} href="#">Presentes</a>
+                <a className={styles.sectionLink} href="#">Confirmar Presença</a>
+                <a className={styles.sectionLink} href="#">Localização</a>
             </nav>
         </div>
     )
@@ -45,12 +45,12 @@ const MobileMenu = () => {
                     :
                     <div className={styles.modal} onClick={handleIsClicked}>
                         <nav className={styles.mobileMenuNavOpened} onClick={handleIsClicked}>
-                            <a className={styles.sectionLink} href="#"> Início</a>
-                            <a className={styles.sectionLink} href="#"> Nossa História</a>
-                            <a className={styles.sectionLink} href="#"> Sobre os Padrinhos</a>
-                            <a className={styles.sectionLink} href="#"> Mensagens aos noivos</a>
-                            <a className={styles.sectionLink} href="#"> Presentes</a>
-                            <a className={styles.sectionLink} href="#"> Confirmar Presença</a>
+                            <a className={styles.sectionLink} href="#">nício</a>
+                            <a className={styles.sectionLink} href="#">ossa História</a>
+                            <a className={styles.sectionLink} href="#">adrinhos</a>
+                            <a className={styles.sectionLink} href="#">ensagens aos noivos</a>
+                            <a className={styles.sectionLink} href="#">resentes</a>
+                            <a className={styles.sectionLink} href="#">onfirmar Presença</a>
                         </nav>
                     </div>
             }

@@ -12,14 +12,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--peach);
 }
 
 .countdownValue>p {
     font-size: 3rem;
-    background-color: var(--peach);
+    background-color: var(--peachLighter);
     border-radius: 0.5rem;
     display: flex;
     justify-content: center;
     height: 5rem;
     width: 5rem;
+}
+
+.countdownValue>span {
+    font-size: 1.2rem;
 }

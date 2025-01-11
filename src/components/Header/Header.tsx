@@ -24,7 +24,7 @@ const Banner = () => {
 const WelcomeTile = () => {
     return (
         <div className={styles.welcomeTile}>
-            <p>Seja bem-vindo ao nosso site</p>
+            <p>Seja bem-vindo ao nosso site!</p>
         </div>
     )
 }
