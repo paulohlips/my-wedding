@@ -5,10 +5,3 @@
     padding: 1rem;
     gap: 1rem;
 }
-
-.card>img {
-    height: 20rem;
-
-    /* TODO: use media queries to define min-width for each screen size*/
-    min-width: 32rem;
-}
