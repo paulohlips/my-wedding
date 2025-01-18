@@ -50,8 +50,6 @@
 .desktopMenuContainer {
     display: flex;
     justify-content: center;
-    background-color: var(--rust);
-    position: fixed;
 }
 
 .desktopMenu {

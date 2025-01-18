@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .map>p {
@@ -14,9 +15,9 @@
 .address {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    justify-content: space-between;
-    max-width: 40vw;
     font-size: 2rem;
     color: var(--peach);
     gap: 1rem;
@@ -30,26 +31,30 @@
     justify-content: center;
 }
 
-
 .link {
     display: flex;
     flex-direction: column;
+    padding-left: 4rem;
 }
 
-.link>a {
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.imageContainer>a {
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 0.3rem;
-    text-decoration: none;
 }
 
-.link>a>p {
+.imageContainer>a>p {
     font-size: 1rem;
     color: var(--peach);
 }
 
-.link>a>img {
+.imageContainer>a>img {
     height: 48px;
-
+    width: 48px;
 }

@@ -5,7 +5,7 @@ import dresscode2 from "../assets/images/dress-code-2.png"
 export const DressCode = () => {
     return (
         <div className={styles.dressCode}>
-            <p>Dress Code: <strong>Esporte Fino</strong></p>
+            <p>Dress Code: Esporte Fino</p>
             <div className={styles.images}>
                 <img src={dresscode1} />
                 <img src={dresscode2} />

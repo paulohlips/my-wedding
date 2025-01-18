@@ -8,7 +8,7 @@
 }
 
 .dressCode>p {
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
     color: var(--rust);
 }
@@ -16,6 +16,7 @@
 .dressCode>h2 {
     text-align: start;
     color: var(--rust);
+    font-size: 1.5rem;
 }
 
 .images {
