@@ -2,6 +2,17 @@ import { useState } from 'react';
 import { Card } from '../../components/Card/Card';
 import styles from './Gifts.module.css'
 
+type Gift = {
+    id: number,
+    src: string,
+    description: string,
+    price: string
+}
+
+type GiftsListProps = {
+    gifts: Array<Gift>
+}
+
 export const Gifts = () => {
     const [giftsList, setGiftsList] = useState(mockedGiftsList)
     return (
@@ -13,37 +24,44 @@ export const Gifts = () => {
                 <button onClick={() => setGiftsList(mockedHoneyMoon)}>Presentes em Loja Física</button>
                 <button onClick={() => setGiftsList(mockedPhysicalStores)}>Cotas de Lua de Mel</button>
             </div>
-
+            <GiftsListDesktop gifts={giftsList}/>
             <div className={styles.disclaimer}>
                 <p>*As imagens são meramente ilustrativas</p>
             </div>
-            <div className={styles.gridContainer}>
-                {
-                    giftsList.map(card => {
-                        return (
-                            <Card
-                                key={card.id}
-                                imageStyles={{
-                                    width: '320px',
-                                    height: '210px',
-                                    objectFit: 'cover',
-                                }}
-                                image={card.src}
-                                children={
-                                    <div className={styles.gift}>
-                                        <p className={styles.giftDescription}>{card.description}</p>
-                                        <p className={styles.giftPrice}>{card.price}</p>
-                                    </div>
-                                }
-                            />
-                        )
-                    })
-                }
-            </div>
+
 
         </div>
     )
 }
+
+const GiftsListDesktop = ({ gifts }: GiftsListProps) => {
+    return (
+        <div className={styles.gridContainer}>
+        {
+            gifts.map(gift => {
+                return (
+                    <Card
+                        key={gift.id}
+                        imageStyles={{
+                            width: '320px',
+                            height: '210px',
+                            objectFit: 'cover',
+                        }}
+                        image={gift.src}
+                        children={
+                            <div className={styles.gift}>
+                                <p className={styles.giftDescription}>{gift.description}</p>
+                                <p className={styles.giftPrice}>{gift.price}</p>
+                            </div>
+                        }
+                    />
+                )
+            })
+        }
+    </div>
+    )
+}
+
 
 const mockedGiftsList = [
     {

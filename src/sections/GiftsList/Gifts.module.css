@@ -39,7 +39,9 @@ h2 {
 .gridContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem
+    gap: 1.2rem;
+    padding-top: 1.2rem;
+
 }
 
 .disclaimer {

@@ -38,19 +38,19 @@ const MobileMenu = () => {
                 !isClicked
                     ? <div className={styles.mobileMenuNavClosed}>
                         <div className={styles.hamburgerIconContainer}>
-                            <GiHamburgerMenu size={28} color='' onClick={handleIsClicked} />
+                            <GiHamburgerMenu size={36} color='#A84424' onClick={handleIsClicked} />
                         </div>
-                        <img src={icon} />
+
                     </div>
                     :
                     <div className={styles.modal} onClick={handleIsClicked}>
                         <nav className={styles.mobileMenuNavOpened} onClick={handleIsClicked}>
-                            <a className={styles.sectionLink} href="#">nício</a>
-                            <a className={styles.sectionLink} href="#">ossa História</a>
-                            <a className={styles.sectionLink} href="#">adrinhos</a>
-                            <a className={styles.sectionLink} href="#">ensagens aos noivos</a>
-                            <a className={styles.sectionLink} href="#">resentes</a>
-                            <a className={styles.sectionLink} href="#">onfirmar Presença</a>
+                            <a className={styles.sectionLink} href="#NossaHistoria">Nossa História</a>
+                            <a className={styles.sectionLink} href="#Padrinhos">Padrinhos</a>
+                            <a className={styles.sectionLink} href="#MensagemAosNoivos">Mensagens aos noivos</a>
+                            <a className={styles.sectionLink} href="#Presentes">Presentes</a>
+                            <a className={styles.sectionLink} href="#ConfirmarPresenca">Confirmar Presença</a>
+                            <a className={styles.sectionLink} href="#Localizacao">Localização</a>
                         </nav>
                     </div>
             }

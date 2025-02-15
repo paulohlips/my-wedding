@@ -35,6 +35,10 @@
     padding-left: 0.8rem;
 }
 
+.radioContainerItem>label:hover {
+    color: var(--peachDarker);
+}
+
 .confirmation {
     display: flex;
     flex-direction: column;

@@ -10,7 +10,7 @@ export const DressCode = () => {
                 <img src={dresscode1} />
                 <img src={dresscode2} />
             </div>
-            <h2>Dica: Usem sapatos confortáveis e sugerimos que não seja salto fino, o local é gramado</h2>
+            <h2>Dica: Usem sapatos confortáveis e sugerimos que não seja salto fino, o local é gramado.</h2>
         </div>
     )
 }

@@ -4,7 +4,7 @@ import waze from "../../assets/images/waze.webp"
 import googleMaps from "../../assets/images/google-maps.png"
 
 export const Map = () => {
-    const address = "-15.674549019018466, -48.09409136933495"; // Replace with the fixed address
+    const address = "-15.674549019018466, -48.09409136933495";
     const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;
 
     const encodedAddress = encodeURIComponent(address);
