@@ -23,6 +23,16 @@
   outline: none;
 }
 
+html {
+  font-size: 16px; 
+}
+
+@media (max-width: 768px) {
+  html {
+      font-size: 12px; /* 1rem = 12px */
+  }
+}
+
 button:hover {
   background-color: var(--peachDarker);
 }

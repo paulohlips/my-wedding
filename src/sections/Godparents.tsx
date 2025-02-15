@@ -26,7 +26,7 @@ export const Godparents = () => {
     }
 
     return (
-        <div id='Padrinhos'className={styles.godParents}>
+        <div id='Padrinhos' className={styles.godParents}>
             <p className={styles.godParentsTitle}>Sobre os Padrinhos</p>
             <div className={styles.slides}>
                 <CgChevronLeft size={48} onClick={() => handleScroll('left')} />
@@ -35,10 +35,12 @@ export const Godparents = () => {
                         mockedData.map(card => {
                             return (
                                 <Card
+                                    //TODO: fix image dimensions
                                     key={card.id}
                                     imageStyles={{
-                                        height: '20rem',
-                                        minWidth: '32rem',
+                                        maxHeight: '30vw',
+                                        minWidth: '80vw',
+                                        maxWidth: '100%',
                                         padding: '1rem'
                                     }}
                                     image={card.src}

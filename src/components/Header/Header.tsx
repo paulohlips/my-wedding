@@ -7,8 +7,10 @@ export const Header = () => {
         <div className={styles.header}>
             <Menu />
             <Banner />
+            <div className={styles.bannerAndCountdown}>
+                <CountDown />
+            </div>
             <WelcomeTile />
-            <CountDown />
         </div>
     )
 }

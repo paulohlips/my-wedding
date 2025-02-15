@@ -3,7 +3,6 @@ import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useIsMobile } from '../../hooks/useIsMobile'
 import styles from './Menu.module.css'
-import icon from '../../assets/images/logo-16.ico'
 
 export const Menu = () => {
     const isMobile = useIsMobile()

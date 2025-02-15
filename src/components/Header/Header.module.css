@@ -5,6 +5,13 @@
     height: 100vh;
 }
 
+
+@media (max-width: 1024px) {
+    .bannerAndCountdown {
+        padding-top: 25%;
+    }
+}
+
 .welcomeTile {
     background-color: var(--peach);
     height: 4rem;
@@ -15,6 +22,7 @@
     position: absolute;
     bottom: 0;
     width: 100vw;
+    /* font-size: clamp(1.5rem, 2vw, 2.5rem); */
 }
 
 .welcomeTile p {
