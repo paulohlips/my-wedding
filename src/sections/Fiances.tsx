@@ -3,7 +3,7 @@ import fiancesImg from '../assets/images/fiaces.png'
 
 export const Fiances = () => {
     return (
-        <div className={styles.fiancesDisplay}>
+        <div id='NossaHistoria' className={styles.fiancesDisplay}>
             <p className={styles.fiancesTextTitle}>Aqui vamos contar um pouquinho da nossa linda história pra vocês!</p>
             <img src={fiancesImg} />
             <p className={styles.fiancesText}>Brasilienses que estudaram juntos na quinta série e nunca trocaram uma palavra em sala de aula, tiverem o reencontro que deu em casamento!!!</p>

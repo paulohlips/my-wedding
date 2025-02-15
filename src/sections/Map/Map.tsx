@@ -13,7 +13,7 @@ export const Map = () => {
     const wazeLink = `https://waze.com/ul?q=${encodedAddress}`;
 
     return (
-        <div>
+        <div id="Localizacao">
             <div className={styles.map}>
                 <p>Local do Evento</p>
 

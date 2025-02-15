@@ -5,7 +5,7 @@ import styles from './Gifts.module.css'
 export const Gifts = () => {
     const [giftsList, setGiftsList] = useState(mockedGiftsList)
     return (
-        <div className={styles.giftsSection}>
+        <div id='Presentes' className={styles.giftsSection}>
             <h1>Presentes aos noivos</h1>
             <h2>Fique à vontade para escolher entre uma das três opções de presente</h2>
             <div className={styles.giftsSectionButtons}>

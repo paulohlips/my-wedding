@@ -17,7 +17,7 @@ export const PresenceConfirmation = () => {
     }
 
     return (
-        <div className={styles.presenceConfirmation}>
+        <div id="ConfirmarPresenca" className={styles.presenceConfirmation}>
             <p>Confirme sua Presença</p>
             <div className={styles.radioSection}>
                 <p className={styles.radioSectionTitle}>Você irá comparecer à cerimônia?</p>

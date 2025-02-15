@@ -2,7 +2,7 @@ import styles from './MessageToFiances.module.css'
 
 export const MessageToFiances = () => {
     return (
-        <div className={styles.form}>
+        <div id='MensagemAosNoivos' className={styles.form}>
             <p>Mensagens aos Noivos</p>
             <form>
                 <div className={styles.name}>

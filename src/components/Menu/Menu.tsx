@@ -14,12 +14,12 @@ const DesktopMenu = () => {
     return (
         <div className={styles.desktopMenuContainer}>
             <nav className={styles.desktopMenu}>
-                <a className={styles.sectionLink} href="#">Nossa História</a>
-                <a className={styles.sectionLink} href="#">Padrinhos</a>
-                <a className={styles.sectionLink} href="#">Mensagens aos noivos</a>
-                <a className={styles.sectionLink} href="#">Presentes</a>
-                <a className={styles.sectionLink} href="#">Confirmar Presença</a>
-                <a className={styles.sectionLink} href="#">Localização</a>
+                <a className={styles.sectionLink} href="#NossaHistoria">Nossa História</a>
+                <a className={styles.sectionLink} href="#Padrinhos">Padrinhos</a>
+                <a className={styles.sectionLink} href="#MensagemAosNoivos">Mensagens aos noivos</a>
+                <a className={styles.sectionLink} href="#Presentes">Presentes</a>
+                <a className={styles.sectionLink} href="#ConfirmarPresenca">Confirmar Presença</a>
+                <a className={styles.sectionLink} href="#Localizacao">Localização</a>
             </nav>
         </div>
     )

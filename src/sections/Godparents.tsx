@@ -26,7 +26,7 @@ export const Godparents = () => {
     }
 
     return (
-        <div className={styles.godParents}>
+        <div id='Padrinhos'className={styles.godParents}>
             <p className={styles.godParentsTitle}>Sobre os Padrinhos</p>
             <div className={styles.slides}>
                 <CgChevronLeft size={48} onClick={() => handleScroll('left')} />
