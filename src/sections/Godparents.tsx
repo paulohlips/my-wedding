@@ -39,6 +39,7 @@ export const Godparents = () => {
                                     imageStyles={{
                                         height: '20rem',
                                         minWidth: '32rem',
+                                        padding: '1rem'
                                     }}
                                     image={card.src}
                                     children={
