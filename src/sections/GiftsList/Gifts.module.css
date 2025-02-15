@@ -5,9 +5,13 @@
     padding-top: 2rem;
 }
 
-.giftsSection>h1,
-h2 {
-    font-size: 4rem;
+.giftsSectionTitle {
+    font-weight: normal;
+    text-align: center;
+    color: var(--rust);
+}
+
+.giftsSection>h3 {
     font-weight: normal;
     text-align: center;
     color: var(--rust);

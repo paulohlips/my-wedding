@@ -11,22 +11,22 @@ import { Map } from './sections/Map/Map'
 export default function App() {
   return (
     <div>
-    <Header />
+      <Header />
 
-    <div style={{  
-      backgroundImage: "url(" + "../../../src/assets/images/background.png"+ ")",
-      backgroundRepeat: 'repeat',
-      backgroundSize: 'contain'
-    }}>
-      <Fiances />
-      <Godparents />
-      <MessageToFiances />
-      <Messages />
-      <Gifts />
-      <PresenceConfirmation />
-      <DressCode />
-      <Map />
-    </div>
+      <div style={{
+        backgroundImage: "url(" + "../../../src/assets/images/background.png" + ")",
+        backgroundRepeat: 'repeat',
+        backgroundSize: 'contain',
+      }}>
+        <Fiances />
+        <Godparents />
+        <MessageToFiances />
+        <Messages />
+        <Gifts />
+        <PresenceConfirmation />
+        <DressCode />
+        <Map />
+      </div>
     </div>
   )
 }

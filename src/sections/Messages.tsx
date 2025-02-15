@@ -1,10 +1,11 @@
+import { Title } from '../components/Title/Title'
 import styles from "./Messages.module.css"
 
 export const Messages = () => {
     return (
 
         <div className={styles.messageBox}>
-            <p>Mensagens Recebidas </p>
+            <Title title="Mensagens Recebidas" />
             {
                 mockedMessages.map(message => {
                     return (

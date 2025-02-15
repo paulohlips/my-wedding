@@ -1,6 +1,7 @@
 import { useState } from "react"
 import styles from "./PresenceConfirmation.module.css"
 import { Modal } from "../components/Modal/Modal"
+import { Title } from '../components/Title/Title'
 
 export const PresenceConfirmation = () => {
     const [inviteAccepted, sentInviteAccepted] = useState<boolean>(false)
@@ -18,7 +19,7 @@ export const PresenceConfirmation = () => {
 
     return (
         <div id="ConfirmarPresenca" className={styles.presenceConfirmation}>
-            <p>Confirme sua Presença</p>
+            <Title title="Confirme sua Presença" styles={styles.giftsSectionTitle} />
             <div className={styles.radioSection}>
                 <p className={styles.radioSectionTitle}>Você irá comparecer à cerimônia?</p>
                 <div className={styles.radioContainer}>

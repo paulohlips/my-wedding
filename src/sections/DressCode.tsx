@@ -1,11 +1,12 @@
 import styles from "./DressCode.module.css"
 import dresscode1 from "../assets/images/dress-code-1.png"
 import dresscode2 from "../assets/images/dress-code-2.png"
+import { Title } from "../components/Title/Title"
 
 export const DressCode = () => {
     return (
         <div className={styles.dressCode}>
-            <p>Dress Code: Esporte Fino</p>
+            <Title title="Dress Code: Esporte Fino" />
             <div className={styles.images}>
                 <img src={dresscode1} />
                 <img src={dresscode2} />

@@ -4,6 +4,7 @@ import styles from './Godparents.module.css'
 import { BiChevronRight } from "react-icons/bi";
 import { useRef } from "react";
 import { useIsMobile } from "../hooks/useIsMobile"
+import { Title } from "../components/Title/Title";
 
 export const Godparents = () => {
     const isMobile = useIsMobile()
@@ -29,7 +30,7 @@ export const Godparents = () => {
 
     return (
         <div id='Padrinhos' className={styles.godParents}>
-            <p className={styles.godParentsTitle}>Sobre os Padrinhos</p>
+            <Title title="Sobre os Padrinhos" styles={styles.godParentsTitle} />
             <div className={styles.slides}>
                 <CgChevronLeft size={48} onClick={() => handleScroll('left')} />
                 <div className={styles.slidingWindow} ref={slideWindowContainer}>

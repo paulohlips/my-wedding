@@ -1,9 +1,10 @@
+import { Title } from '../components/Title/Title'
 import styles from './MessageToFiances.module.css'
 
 export const MessageToFiances = () => {
     return (
         <div id='MensagemAosNoivos' className={styles.form}>
-            <p>Mensagens aos Noivos</p>
+            <Title title="Mensagens aos Noivos" />
             <form>
                 <div className={styles.name}>
                     <p>Nome:</p>

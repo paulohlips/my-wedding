@@ -2,6 +2,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import styles from "./Map.module.css"
 import waze from "../../assets/images/waze.webp"
 import googleMaps from "../../assets/images/google-maps.png"
+import { Title } from '.././../components/Title/Title'
 
 export const Map = () => {
     const address = "-15.674549019018466, -48.09409136933495";
@@ -15,7 +16,7 @@ export const Map = () => {
     return (
         <div id="Localizacao">
             <div className={styles.map}>
-                <p>Local do Evento</p>
+                <Title title="Local do Evento" styles={styles.giftsSectionTitle} />
 
                 <div className={styles.address}>
                     <div className={styles.locationIcon}>
