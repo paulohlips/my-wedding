@@ -31,7 +31,9 @@ export const Gifts = () => {
                 <button onClick={() => setGiftsList(mockedHoneyMoon)}>Presentes em Loja Física</button>
                 <button onClick={() => setGiftsList(mockedPhysicalStores)}>Cotas de Lua de Mel</button>
             </div>
-            {isMobile ? <SlideWindow data={giftsList} /> : <GiftsListDesktop gifts={giftsList} />}
+            <div style={{ paddingTop: '2rem' }}>
+                {isMobile ? <SlideWindow data={giftsList} /> : <GiftsListDesktop gifts={giftsList} />}
+            </div>
         </div>
     )
 }

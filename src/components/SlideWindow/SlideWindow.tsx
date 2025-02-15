@@ -46,13 +46,17 @@ export const SlideWindow = ({ data }: SlideWindowGenericProps) => {
                                 <Card
                                     key={card.id}
                                     imageStyles={{
-                                        maxHeight: isMobile ? '40vh' : '70vh',
-                                        minWidth: isMobile ? '100%' : '5vw',
+                                        maxHeight: isMobile ? '40vh' : '600px',
+                                        maxWidth: isMobile ? '70vw' : '600px',
                                         padding: '1rem'
                                     }}
                                     image={card.src}
                                     children={
-                                        <p className={styles.cardDescription}>{card.description}</p>}
+                                        <div>
+                                            <p className={styles.cardDescription}>{card.description}</p>
+                                            <p className={styles.cardDescription}>{card.price}</p>
+                                        </div>
+                                    }
                                 />
                             )
                         })

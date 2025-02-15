@@ -1,12 +1,10 @@
 import styles from './Fiances.module.css'
 import fiancesImg from '../assets/images/fiaces.png'
-import { useIsMobile } from '../hooks/useIsMobile'
 import { Title } from '../components/Title/Title'
 
 export const Fiances = () => {
-    const isMobile = useIsMobile()
     return (
-        <div id='NossaHistoria' className={styles.fiancesDisplay} style={{ maxWidth: isMobile ? '90%' : '100%' }}>
+        <div id='NossaHistoria' className={styles.fiancesDisplay}>
             <Title title='Um pouquinho da nossa linda história' styles={styles.fiancesTextTitle} />
             <img src={fiancesImg} />
             <p className={styles.fiancesText}>Brasilienses que estudaram juntos na quinta série e nunca trocaram uma palavra em sala de aula, tiverem o reencontro que deu em casamento!!!</p>

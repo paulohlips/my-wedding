@@ -7,7 +7,8 @@
 
 .messageBox>p {
     font-size: 4rem;
-    text-align: center;
+    text-align: justify;
+    text-justify: inter-word;
     color: var(--rust);
 }
 
