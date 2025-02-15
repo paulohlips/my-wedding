@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 2rem;
+    padding-inline: 0.25rem;
 }
 
 .giftsSectionTitle {
@@ -24,7 +25,7 @@
 
 .giftsSectionButtons {
     display: flex;
-    gap: 4rem;
+    gap: 2.25rem;
     padding-top: 2rem
 }
 
@@ -49,7 +50,7 @@
 }
 
 .disclaimer {
-    padding-top: 2rem;
+    padding-top: 0.25rem;
     color: var(--rust);
 }
 

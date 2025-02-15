@@ -3,6 +3,7 @@ import styles from "./Map.module.css"
 import waze from "../../assets/images/waze.webp"
 import googleMaps from "../../assets/images/google-maps.png"
 import { Title } from '.././../components/Title/Title'
+import { useIsMobile } from "../../hooks/useIsMobile"
 
 export const Map = () => {
     const address = "-15.674549019018466, -48.09409136933495";
@@ -12,6 +13,8 @@ export const Map = () => {
 
     const googleMapsLink = `https://www.google.com/maps?q=${encodedAddress}`;
     const wazeLink = `https://waze.com/ul?q=${encodedAddress}`;
+
+    const isMobile = useIsMobile()
 
     return (
         <div id="Localizacao">
@@ -44,9 +47,9 @@ export const Map = () => {
                 </div>
                 <iframe
                     src={mapUrl}
-                    width="800"
-                    height="600"
-                    style={{ border: 0 }}
+                    width={isMobile ? "90%" : "800"}
+                    height={isMobile ? "100%" : "600"}
+                    style={{ border: 0, paddingBottom: '10px' }}
                     allowFullScreen={true}
                     loading="lazy"
                 ></iframe>

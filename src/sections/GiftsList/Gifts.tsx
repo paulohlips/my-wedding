@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Card } from '../../components/Card/Card';
 import styles from './Gifts.module.css'
 import { Title } from '../../components/Title/Title'
+import { useIsMobile } from '../../hooks/useIsMobile';
+import { SlideWindow } from '../../components/SlideWindow/SlideWindow';
 
 type Gift = {
     id: number,
@@ -16,21 +18,20 @@ type GiftsListProps = {
 
 export const Gifts = () => {
     const [giftsList, setGiftsList] = useState(mockedGiftsList)
+    const isMobile = useIsMobile()
     return (
         <div id='Presentes' className={styles.giftsSection}>
             <Title title="Presentes aos noivos" styles={styles.giftsSectionTitle} />
             <h3>Fique à vontade para escolher entre uma das três opções de presente</h3>
+            <div className={styles.disclaimer}>
+                <p>*As imagens são meramente ilustrativas</p>
+            </div>
             <div className={styles.giftsSectionButtons}>
                 <button onClick={() => setGiftsList(mockedGiftsList)}>Presentes Virtuais</button>
                 <button onClick={() => setGiftsList(mockedHoneyMoon)}>Presentes em Loja Física</button>
                 <button onClick={() => setGiftsList(mockedPhysicalStores)}>Cotas de Lua de Mel</button>
             </div>
-            <GiftsListDesktop gifts={giftsList} />
-            <div className={styles.disclaimer}>
-                <p>*As imagens são meramente ilustrativas</p>
-            </div>
-
-
+            {isMobile ? <SlideWindow data={giftsList} /> : <GiftsListDesktop gifts={giftsList} />}
         </div>
     )
 }
