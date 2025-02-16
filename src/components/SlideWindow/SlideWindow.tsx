@@ -53,8 +53,8 @@ export const SlideWindow = ({ data }: SlideWindowGenericProps) => {
                                     image={card.src}
                                     children={
                                         <div>
-                                            <p className={styles.cardDescription}>{card.description}</p>
-                                            <p className={styles.cardDescription}>{card.price}</p>
+                                            {card.description ? <p className={styles.cardDescription}>{card.description}</p> : null}
+                                            {card.price ? <p className={styles.cardDescription}>{card.price}</p> : null}
                                         </div>
                                     }
                                 />

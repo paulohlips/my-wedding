@@ -17,14 +17,14 @@ export default function App() {
         backgroundRepeat: 'repeat',
         backgroundSize: 'contain',
       }}>
-        <div style={{ backgroundColor: "rgba(255, 250, 232, 0.8)" }}><Fiances /></div>
-        <div style={{ backgroundColor: "rgba(255, 250, 243, 0.8)" }}><Godparents /></div>
-        <div style={{ backgroundColor: "rgba(255, 250, 232, 0.8)" }}><MessageToFiances /></div>
-        <div style={{ backgroundColor: "rgba(255, 250, 243, 0.8)" }}><Messages /></div>
-        <div style={{ backgroundColor: "rgba(255, 250, 232, 0.8)" }}><Gifts /></div>
-        <div style={{ backgroundColor: "rgba(255, 250, 243, 0.8)" }}><PresenceConfirmation /></div>
-        <div style={{ backgroundColor: "rgba(255, 250, 232, 0.8)" }}><DressCode /></div>
-        <div style={{ backgroundColor: "rgba(255, 250, 243, 0.8)" }}><Map /></div>
+        <div><Fiances /></div>
+        <div><Godparents /></div>
+        <div><MessageToFiances /></div>
+        <div><Messages /></div>
+        <div><Gifts /></div>
+        <div><PresenceConfirmation /></div>
+        <div><DressCode /></div>
+        <div><Map /></div>
       </div>
     </div>
   )

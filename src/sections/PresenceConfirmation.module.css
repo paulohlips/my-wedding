@@ -19,7 +19,7 @@
 }
 
 .radioSectionTitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--rust);
     padding-top: 1rem;
 }
@@ -32,7 +32,7 @@
 }
 
 .radioContainerItem>label {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--rust);
     padding-left: 0.8rem;
 }

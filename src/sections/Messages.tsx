@@ -5,11 +5,13 @@ export const Messages = () => {
     return (
 
         <div className={styles.messageBox}>
-            <Title title="Mensagens Recebidas" />
+            <div className={styles.messageSectionTitle}>
+                <Title title="Mensagens Recebidas" />
+            </div>
             {
                 mockedMessages.map(message => {
                     return (
-                        <div >
+                        <div>
                             <div className={styles.author}>
                                 <p>{message.name}</p>
                                 <p>{message.date}</p>

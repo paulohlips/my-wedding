@@ -33,6 +33,11 @@
     color: var(--white);
 }
 
+.submitButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
 form > div >input, textarea {
     border-color: var(--peach);
     box-sizing: content-box;

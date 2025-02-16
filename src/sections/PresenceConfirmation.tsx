@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { ReactElement, useState } from "react"
 import styles from "./PresenceConfirmation.module.css"
 import { Modal } from "../components/Modal/Modal"
 import { Title } from '../components/Title/Title'
@@ -26,9 +26,9 @@ export const PresenceConfirmation = () => {
                     <div className={styles.radioContainerItem}>
                         <input
                             type="radio"
-                            id="contactChoice1"
-                            name="invite" value="option"
-                            size={28}
+                            id="choice1"
+                            name="accept"
+                            value="option"
                             onChange={() => handleInvited(true)}
                             onClick={() => handleInvited(true)}
                         />
@@ -36,24 +36,44 @@ export const PresenceConfirmation = () => {
                     </div>
 
                     <div className={styles.radioContainerItem}>
-                        <input type="radio"
-                            id="contactChoice2"
-                            name="invite"
+                        <input
+                            type="radio"
+                            id="choice1"
+                            name="accept"
                             value="option"
-                            onChange={() => handleInvited(false)}
+                            onChange={() => handleInvited(true)}
+                            onClick={() => handleInvited(true)}
                         />
                         <label>Não</label>
                     </div>
                 </div>
+//TODO: create a modal contet based on user response: true or false
+                <CustomModal
+                    isModalOpen={isModalOpen}
+                    handleClose={handleClose}
+                    children={
+                        <div className={styles.confirmation}>
+                            <p>Digite seu token de confirmação: </p>
+                            <input type="text" />
+                            <button onClick={() => handleInvited}>Confirmar</button>
+                        </div>}
+                />
 
-                <Modal isOpen={isModalOpen} onClose={handleClose}>
-                    <div className={styles.confirmation}>
-                        <p>Digite seu token de confirmação: </p>
-                        <input type="text" />
-                        <button onClick={() => handleInvited}>Confirmar</button>
-                    </div>
-                </Modal>
             </div>
         </div>
+    )
+}
+
+type CustomModalProps = {
+    isModalOpen: boolean,
+    handleClose: () => void,
+    children: ReactElement
+}
+
+const CustomModal = ({ isModalOpen, handleClose, children }: CustomModalProps) => {
+    return (
+        <Modal isOpen={isModalOpen} onClose={handleClose}>
+            {children}
+        </Modal>
     )
 }

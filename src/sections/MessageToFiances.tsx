@@ -14,7 +14,10 @@ export const MessageToFiances = () => {
                     <p>Mensagem:</p>
                     <textarea />
                 </div>
-                <button className={styles.submitButton} type="submit">Enviar</button>
+                <div className={styles.submitButtonContainer}>
+                    <button className={styles.submitButton} type="submit">Enviar</button>
+
+                </div>
             </form>
         </div>
     )

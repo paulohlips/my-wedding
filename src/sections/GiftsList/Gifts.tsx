@@ -27,9 +27,9 @@ export const Gifts = () => {
                 <p>*As imagens são meramente ilustrativas</p>
             </div>
             <div className={styles.giftsSectionButtons}>
-                <button onClick={() => setGiftsList(mockedGiftsList)}>Presentes Virtuais</button>
-                <button onClick={() => setGiftsList(mockedHoneyMoon)}>Presentes em Loja Física</button>
-                <button onClick={() => setGiftsList(mockedPhysicalStores)}>Cotas de Lua de Mel</button>
+                <button onClick={() => setGiftsList(mockedGiftsList)}>Virtuais</button>
+                <button onClick={() => setGiftsList(mockedHoneyMoon)}>Loja Física</button>
+                <button onClick={() => setGiftsList(mockedPhysicalStores)}>Lua de Mel</button>
             </div>
             <div style={{ paddingTop: '2rem' }}>
                 {isMobile ? <SlideWindow data={giftsList} /> : <GiftsListDesktop gifts={giftsList} />}
@@ -70,7 +70,7 @@ const GiftsListDesktop = ({ gifts }: GiftsListProps) => {
 const mockedGiftsList = [
     {
         id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&w=600",
+        src: "src/assets/images/dress-code-1.png",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         price: "R$ 235,90"
     },

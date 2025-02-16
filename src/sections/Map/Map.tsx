@@ -30,19 +30,19 @@ export const Map = () => {
                         <p>Núcleo Rural Alexandre Gusmão, 97 - Brazlândia</p>
                         <p>Brasília - DF, 72465-370</p>
                     </div>
-                    <div className={styles.link}>
-                        <div className={styles.imageContainer}>
-                            <a href={googleMapsLink} target="_blank" rel="noopener noreferrer">
-                                <p>Abrir no Google Maps</p>
-                                <img src={googleMaps} />
-                            </a>
-                        </div>
-                        <div className={styles.imageContainer}>
-                            <a href={wazeLink} target="_blank" rel="noopener noreferrer">
-                                <p>Abrir no Waze</p>
-                                <img src={waze} />
-                            </a>
-                        </div>
+                </div>
+                <div className={styles.link}>
+                    <div className={styles.imageContainer}>
+                        <a href={googleMapsLink} target="_blank" rel="noopener noreferrer">
+                            <p>Abrir no Google Maps</p>
+                            <img src={googleMaps} />
+                        </a>
+                    </div>
+                    <div className={styles.imageContainer}>
+                        <a href={wazeLink} target="_blank" rel="noopener noreferrer">
+                            <p>Abrir no Waze</p>
+                            <img src={waze} />
+                        </a>
                     </div>
                 </div>
                 <iframe

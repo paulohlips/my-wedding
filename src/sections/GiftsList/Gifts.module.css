@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 2rem;
-    padding-inline: 0.25rem;
+    padding-top: 4rem;
+    padding-inline: 1rem;
 }
 
 .giftsSectionTitle {
@@ -29,9 +29,9 @@
     padding-top: 2rem
 }
 
+
 .giftsSectionButtons>button {
     padding-inline: 2rem;
-    height: 3rem;
     background-color: var(--rust);
     border-radius: 4px;
     border-width: 0px;
@@ -39,6 +39,7 @@
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--white);
+    height: 3.5rem;
 }
 
 .gridContainer {

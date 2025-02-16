@@ -13,10 +13,16 @@
     color: var(--rust);
 }
 
-.dressCode>h2 {
-    text-align: start;
+.dressCodeTips {
+    text-align: center;
     color: var(--rust);
     font-size: 1.5rem;
+}
+
+@media screen {
+    .dressCodeTips {
+        max-width: 80vw;
+    }
 }
 
 .images {

@@ -11,8 +11,9 @@ export const DressCode = () => {
         <div className={styles.dressCode}>
             <Title title="Dress Code: Esporte Fino" />
             {isMobile ? <SlideWindow data={mobileInput} /> : <DesktopDressCode />}
-
-            <h2>Dica: Usem sapatos confortáveis e sugerimos que não seja salto fino, o local é gramado.</h2>
+            <div className={styles.dressCodeTips}>
+                <p>Dica: Usem sapatos confortáveis e sugerimos que não seja salto fino, o local é gramado.</p>
+            </div>
         </div>
     )
 }
