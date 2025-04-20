@@ -8,11 +8,11 @@ export const MessageToFiances = () => {
             <form>
                 <div className={styles.name}>
                     <p>Nome:</p>
-                    <input type="text" />
+                    <input type="text" className={styles.input}/>
                 </div>
                 <div className={styles.message}>
-                    <p>Mensagem:</p>
-                    <textarea />
+                    <p className={styles.messages}>Mensagem:</p>
+                    <textarea className={styles.textarea}/>
                 </div>
                 <div className={styles.submitButtonContainer}>
                     <button className={styles.submitButton} type="submit">Enviar</button>

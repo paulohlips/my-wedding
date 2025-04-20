@@ -1,0 +1,98 @@
+.form {
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 40px auto;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+span {
+  padding-left: 0.5rem;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons svg {
+  font-size: 28px;
+  margin-left: 8px;
+  color: #444;
+}
+
+.container {
+  font-size: 16px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.identificationType {
+  width: 70px;
+}
+
+input,
+select {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: .25rem;
+  background-color: #fff;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #009ee3;
+  box-shadow: 0 0 0 2px rgba(0, 158, 227, 0.2);
+}
+
+button {
+  background-color: #009ee3;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #007bbd;
+}
+
+.progressBar {
+  height: 4px;
+  width: 100%;
+  appearance: none;
+}
+
+.progressBar::-webkit-progress-bar {
+  background-color: #f3f3f3;
+  border-radius: 4px;
+}
+
+.progressBar::-webkit-progress-value {
+  background-color: #009ee3;
+  border-radius: 4px;
+}

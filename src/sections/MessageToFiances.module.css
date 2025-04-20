@@ -5,7 +5,7 @@
     padding-top: 2rem;
 }
 
-.form>p {
+.messages {
     font-size: 4rem;
     text-align: center;
     color: var(--rust);
@@ -38,7 +38,7 @@
     justify-content: flex-end;
 }
 
-form > div >input, textarea {
+.textarea {
     border-color: var(--peach);
     box-sizing: content-box;
     background-color: var(--peachLighter);
@@ -48,13 +48,13 @@ form > div >input, textarea {
 }
 
 @media (width >= 900px) {
-    form > div >input {
+    .input {
         font-size: 1.8rem;
         height: 20px;
         width: 60vw;
 
     }
-    form > div >textarea {
+    .textarea {
         font-size: 1.8rem;
         height: 100px;
         width: 60vw;
@@ -62,11 +62,11 @@ form > div >input, textarea {
 }
 
 @media (width < 900px) {
-    form > div> input {
+    .input {
         font-size: 1.5rem;
         width: 90vw;
     }
-    form > div > textarea {
+    .textarea {
         font-size: 2.5rem;
         width: 90vw;
         height: 100px;

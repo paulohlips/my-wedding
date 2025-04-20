@@ -11,7 +11,7 @@ export const Messages = () => {
             {
                 mockedMessages.map(message => {
                     return (
-                        <div>
+                        <div key={message.id}>
                             <div className={styles.author}>
                                 <p>{message.name}</p>
                                 <p>{message.date}</p>
@@ -28,21 +28,25 @@ export const Messages = () => {
 
 const mockedMessages = [
     {
+        id: Math.random(),
         name: "Cassia",
         date: "28/10/2024",
         message: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Tenetur ipsum aliquam perspiciatis ipsam ea omnis magnam provident consequatur similique voluptates quisquam veritatis voluptatem assumenda ad ducimus commodi, vitae reprehenderit eligendi."
     },
     {
+        id: Math.random(),
         name: "Cassia",
         date: "28/10/2024",
         message: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Tenetur ipsum aliquam perspiciatis ipsam ea omnis magnam provident consequatur similique voluptates quisquam veritatis voluptatem assumenda ad ducimus commodi, vitae reprehenderit eligendi."
     },
     {
+        id: Math.random(),
         name: "Cassia",
         date: "28/10/2024",
         message: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Tenetur ipsum aliquam perspiciatis ipsam ea omnis magnam provident consequatur similique voluptates quisquam veritatis voluptatem assumenda ad ducimus commodi, vitae reprehenderit eligendi."
     },
     {
+        id: Math.random(),
         name: "Cassia",
         date: "28/10/2024",
         message: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Tenetur ipsum aliquam perspiciatis ipsam ea omnis magnam provident consequatur similique voluptates quisquam veritatis voluptatem assumenda ad ducimus commodi, vitae reprehenderit eligendi."
