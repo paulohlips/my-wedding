@@ -18,7 +18,7 @@ export const CheckoutForm = () => {
         id: 'form-checkout',
         cardNumber: {
           id: 'form-checkout__cardNumber',
-          placeholder: 'Número do cartão',
+          placeholder: '1234 1234 1234 1234',
         },
         expirationDate: {
           id: 'form-checkout__expirationDate',
@@ -26,7 +26,7 @@ export const CheckoutForm = () => {
         },
         securityCode: {
           id: 'form-checkout__securityCode',
-          placeholder: 'CVV',
+          placeholder: '123',
         },
         cardholderName: {
           id: 'form-checkout__cardholderName',
