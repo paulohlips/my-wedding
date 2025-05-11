@@ -19,7 +19,9 @@ export const Modal = ({ children, isOpen, onClose }: ModalPropsType) => {
                         color="#A84424"
                         onClick={onClose}
                     />
-                    {children}
+                    <div className={styles.scrollArea}>
+                        {children}
+                    </div>
                 </div>
             </div>
             : null

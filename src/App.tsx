@@ -7,13 +7,13 @@ import { Messages } from './sections/Messages'
 import { MessageToFiances } from './sections/MessageToFiances'
 import { PresenceConfirmation } from './sections/PresenceConfirmation'
 import { Map } from './sections/Map/Map'
-import {CheckoutForm  } from './sections/Payments/CheckoutForm'
+// import { CheckoutForm } from './sections/Payments/CheckoutForm'
 
 export default function App() {
   return (
     <div>
       <Header />
-      <div><CheckoutForm/></div>
+      {/* <div><CheckoutForm/></div> */}
       <div style={{
         backgroundImage: "url(" + "../../../src/assets/images/background.png" + ")",
         backgroundRepeat: 'repeat',
@@ -24,6 +24,7 @@ export default function App() {
         <div><MessageToFiances /></div>
         <div><Messages /></div>
         <div><Gifts /></div>
+
         <div><PresenceConfirmation /></div>
         <div><DressCode /></div>
         <div><Map /></div>

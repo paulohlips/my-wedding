@@ -13,10 +13,11 @@ type SlideWindowGeneric = {
 
 type SlideWindowGenericProps = {
     data: Array<SlideWindowGeneric>
+    showButton?: boolean
 }
 
 
-export const SlideWindow = ({ data }: SlideWindowGenericProps) => {
+export const SlideWindow = ({ data, showButton }: SlideWindowGenericProps) => {
     const isMobile = useIsMobile()
     const slideWindowContainer = useRef<HTMLDivElement | null>(null);
 
@@ -52,9 +53,10 @@ export const SlideWindow = ({ data }: SlideWindowGenericProps) => {
                                     }}
                                     image={card.src}
                                     children={
-                                        <div>
+                                        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                                             {card.description ? <p className={styles.cardDescription}>{card.description}</p> : null}
                                             {card.price ? <p className={styles.cardDescription}>{card.price}</p> : null}
+                                            {showButton ? <button onClick={() => console.log(card)} className={styles.buyGiftButton}>Comprar</button> : null}
                                         </div>
                                     }
                                 />

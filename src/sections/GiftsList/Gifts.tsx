@@ -4,20 +4,13 @@ import styles from './Gifts.module.css'
 import { Title } from '../../components/Title/Title'
 import { useIsMobile } from '../../hooks/useIsMobile';
 import { SlideWindow } from '../../components/SlideWindow/SlideWindow';
-
-type Gift = {
-    id: number,
-    src: string,
-    description: string,
-    price: string
-}
-
-type GiftsListProps = {
-    gifts: Array<Gift>
-}
+import { Modal } from '../../components/Modal/Modal';
+import { Cart } from '../../components/Cart/Cart';
+import { Gift, GiftsListProps } from '../../context/CartContext';
+import { useCart } from '../../context/CartContext';
 
 export const Gifts = () => {
-    const [giftsList, setGiftsList] = useState(mockedGiftsList)
+    const [giftsList, setGiftsList] = useState(giftMocks)
     const isMobile = useIsMobile()
     return (
         <div id='Presentes' className={styles.giftsSection}>
@@ -27,23 +20,40 @@ export const Gifts = () => {
                 <p>*As imagens são meramente ilustrativas</p>
             </div>
             <div className={styles.giftsSectionButtons}>
-                <button onClick={() => setGiftsList(mockedGiftsList)}>Virtuais</button>
+                <button onClick={() => setGiftsList(giftMocks)}>Virtuais</button>
                 <button onClick={() => setGiftsList(mockedHoneyMoon)}>Loja Física</button>
                 <button onClick={() => setGiftsList(mockedPhysicalStores)}>Lua de Mel</button>
             </div>
             <div style={{ paddingTop: '2rem' }}>
-                {isMobile ? <SlideWindow data={giftsList} /> : <GiftsListDesktop gifts={giftsList} />}
+                {isMobile ? <SlideWindow data={giftsList} showButton={true} /> :
+                    <GiftsListDesktop gifts={giftsList} />
+                }
             </div>
         </div>
     )
 }
 
 const GiftsListDesktop = ({ gifts }: GiftsListProps) => {
+    const [isOpen, setIsOpen] = useState(false)
+    const { cart, addToCart, clearCart } = useCart()
+
+    const handleBuy = (gift: Gift) => {
+        addToCart({ ...gift, quantity: 1 });
+        setIsOpen(true);
+        console.log(cart)
+    };
+
+    const handleClearCart = () => {
+        clearCart()
+        setIsOpen(false)
+    }
+
     return (
         <div className={styles.gridContainer}>
             {
                 gifts.map(gift => {
                     return (
+
                         <Card
                             key={gift.id}
                             imageStyles={{
@@ -56,6 +66,15 @@ const GiftsListDesktop = ({ gifts }: GiftsListProps) => {
                                 <div className={styles.gift}>
                                     <p className={styles.giftDescription}>{gift.description}</p>
                                     <p className={styles.giftPrice}>{gift.price}</p>
+                                    <button onClick={() => handleBuy(gift)} className={styles.buyGiftButton}>Comprar</button>
+                                    <Modal isOpen={isOpen && !!cart.length} onClose={() => setIsOpen(false)} children={
+                                        <div>
+                                            <a className={styles.giftRemoveItem} onClick={() => handleClearCart()}>
+                                                Remover Tudo
+                                            </a>
+                                            <Cart />
+                                        </div>
+                                    } />
                                 </div>
                             }
                         />
@@ -66,247 +85,132 @@ const GiftsListDesktop = ({ gifts }: GiftsListProps) => {
     )
 }
 
-
-const mockedGiftsList = [
+const giftMocks: Gift[] = [
     {
-        id: 100 * Math.random(),
-        src: "src/assets/images/dress-code-1.png",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
+        id: 'gift-0011',
         src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
+        description: 'Máquina de Lavar',
+        price: '$190.99',
+        priceInCents: 19990,
+        quantity: 10,
     },
     {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/632522/pexels-photo-632522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
+        id: 'gift-0021',
         src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
+        description: 'Geladeira',
+        price: '$290.99',
+        priceInCents: 29990,
+        quantity: 5,
     },
     {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/632522/pexels-photo-632522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
+        id: 'gift-0031',
         src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
+        description: 'TV Smart',
+        price: '$1400.50',
+        priceInCents: 14500,
+        quantity: 25,
     },
     {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
+        id: 'gift-0041',
+        src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description: 'Jogo de Panelas',
+        price: '$120.00',
+        priceInCents: 12000,
+        quantity: 40,
     },
     {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/632522/pexels-photo-632522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
+        id: 'gift-0051',
+        src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description: 'Sofá',
+        price: '$220.75',
+        priceInCents: 22750,
+        quantity: 15,
     }
 ];
 
 const mockedHoneyMoon = [
     {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/632522/pexels-photo-632522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
+        id: 'gift-0013',
         src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
+        description: 'Máquina de Lavar',
+        price: '$19.99',
+        priceInCents: 1999,
+        quantity: 10,
     },
     {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/632522/pexels-photo-632522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
+        id: 'gift-0023',
         src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
+        description: 'Geladeira',
+        price: '$29.99',
+        priceInCents: 2999,
+        quantity: 5,
     },
     {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
+        id: 'gift-0033',
+        src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description: 'Air Frayer',
+        price: '$14.50',
+        priceInCents: 1450,
+        quantity: 25,
     },
     {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/632522/pexels-photo-632522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
+        id: 'gift-0043',
+        src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description: 'Jogo de Panelas',
+        price: '$12.00',
+        priceInCents: 1200,
+        quantity: 40,
     },
     {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    }
+        id: 'gift-0053',
+        src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description: 'Sofá',
+        price: '$22.75',
+        priceInCents: 2275,
+        quantity: 15,
+    },
 ];
 
 const mockedPhysicalStores = [
     {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
+        id: 'gift-001',
         src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
+        description: 'Máquina de Lavar',
+        price: '$19.99',
+        priceInCents: 1999,
+        quantity: 10,
     },
     {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/632522/pexels-photo-632522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    },
-    {
-        id: 100 * Math.random(),
+        id: 'gift-002',
         src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
+        description: 'Geladeira',
+        price: '$29.99',
+        priceInCents: 2999,
+        quantity: 5,
     },
     {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
+        id: 'gift-003',
+        src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description: 'Air Frayer',
+        price: '$14.50',
+        priceInCents: 1450,
+        quantity: 25,
     },
     {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/632522/pexels-photo-632522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
+        id: 'gift-004',
+        src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description: 'Jogo de Panelas',
+        price: '$12.00',
+        priceInCents: 1200,
+        quantity: 40,
     },
     {
-        id: 100 * Math.random(),
-        src: "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        price: "R$ 235,90"
-    }
+        id: 'gift-005',
+        src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description: 'Sofá',
+        price: '$22.75',
+        priceInCents: 2275,
+        quantity: 15,
+    },
 ];
 

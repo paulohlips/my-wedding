@@ -32,3 +32,11 @@
 .closeIcon:hover {
     background-color: var(--peackDarker);
 }
+
+.scrollArea {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+
