@@ -23,7 +23,7 @@ export const Modal = ({ children, footer, isOpen, onClose }: ModalPropsType) => 
                     <div className={styles.scrollArea}>
                         {children}
                     </div>
-                    <div>
+                    <div className={styles.footer}>
                         {footer}
                     </div>
                 </div>

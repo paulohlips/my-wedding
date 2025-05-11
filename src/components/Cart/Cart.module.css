@@ -77,10 +77,10 @@
 }
 
 .giftRemoveItem {
+  display: flex;
   margin-top: 2rem;
   font-size: 1rem;
   text-decoration: underline;
-  align-self: flex-end;
 }
 
 

@@ -90,7 +90,6 @@ const GiftsListDesktop = ({ gifts }: GiftsListProps) => {
                                                 Remover Tudo
                                             </a>
                                             <Cart />
-                                            <div className={styles.divisor} />
                                         </div>
                                     }
                                     footer={
