@@ -4,11 +4,12 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 
 type ModalPropsType = {
     children: ReactNode;
+    footer: ReactNode;
     isOpen: boolean;
     onClose: () => void;
 }
 
-export const Modal = ({ children, isOpen, onClose }: ModalPropsType) => {
+export const Modal = ({ children, footer, isOpen, onClose }: ModalPropsType) => {
     return (
         isOpen
             ? <div className={styles.modal}>
@@ -21,6 +22,9 @@ export const Modal = ({ children, isOpen, onClose }: ModalPropsType) => {
                     />
                     <div className={styles.scrollArea}>
                         {children}
+                    </div>
+                    <div>
+                        {footer}
                     </div>
                 </div>
             </div>

@@ -27,9 +27,6 @@ export const Cart = () => {
           quantity={item.quantity}
         />
       ))}
-      <div className={styles.checkoutButtonContainer}>
-        <button className={styles.checkoutButton}>Finalizar Compra</button>
-      </div>
     </div>
   );
 };
@@ -39,15 +36,17 @@ const CartItem = ({ id, description, imageSrc, price, quantity }: Gift) => {
 
   return (
     <div id={id} className={styles.giftContainer}>
-      <img src={`${imageSrc}`} className={styles.giftImage} />
-      <p className={styles.giftName}>{description}</p>
       <div className={styles.giftSteppersContainer}>
-        {quantity > 1 ? <button className={styles.giftSteppers} onClick={() => changeItemQuantity(id, "decrease")}>-</button> : null}
+        <img src={`${imageSrc}`} className={styles.giftImage} />
+        <p className={styles.giftName}>{description}</p>
+      </div>
+      <div className={styles.giftSteppersContainer}>
+        <button className={styles.giftSteppers} disabled={quantity === 1} onClick={() => changeItemQuantity(id, "decrease")}>-</button>
         <p className={styles.giftQuantity}>{quantity}</p>
         <button className={styles.giftSteppers} onClick={() => changeItemQuantity(id, "increase")}>+</button>
       </div>
       <div>
-        <p className={styles.giftPrice}>R$ {(price * quantity) / 100}</p>
+        <p className={styles.giftPrice}>R$ {((price * quantity) / 100).toFixed(2)}</p>
         <a
           className={styles.giftRemoveItem}
           onClick={() => removeFromCart(id)}

@@ -14,7 +14,9 @@
 
 .checkoutButtonContainer {
   display: flex;
-  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-top: 3rem;
 }
 
 .cleanCart {
@@ -46,12 +48,13 @@
 }
 
 .giftSteppersContainer {
+  width: 16rem;
   padding-inline: 2rem;
   flex-direction: row;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem
+  gap: 1rem;
 }
 
 .giftSteppers {
@@ -68,14 +71,9 @@
   border: none;
 }
 
-.giftQuantity {
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-.giftPrice {
-  font-weight: bold;
-  font-size: 1.4rem;
+.giftSteppers:disabled {
+  background-color: rgba(200, 200, 200, 0.5);
+  cursor: not-allowed;
 }
 
 .giftRemoveItem {
@@ -83,4 +81,19 @@
   font-size: 1rem;
   text-decoration: underline;
   align-self: flex-end;
+}
+
+
+.giftQuantity {
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.giftPrice {
+  width: 150px;
+  font-weight: bold;
+  font-size: 1.4rem;
 }

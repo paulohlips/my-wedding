@@ -20,6 +20,7 @@ export type CartContextType = {
   removeFromCart: (itemId: string) => void;
   clearCart: () => void;
   changeItemQuantity: (intemId: string, operationType: "decrease" | "increase") => void;
+  getTotalCartPriceInCents: () => number
 };
 
 const CartContext = createContext<CartContextType | null>(null);
@@ -88,8 +89,12 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
   const clearCart = () => setCart([]);
 
+  const getTotalCartPriceInCents = () => {
+    return cart.reduce((totalPrice, item) => totalPrice + (item.priceInCents * item.quantity), 0)
+  }
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, changeItemQuantity }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, changeItemQuantity, getTotalCartPriceInCents }}>
       {children}
     </CartContext.Provider>
   );
