@@ -1,99 +1,206 @@
-.Container {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+@media (width < 900px) {
+  .giftContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    margin-right: 1rem;
+  }
+
+  .checkoutButtonContainer {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+
+  .cleanCart {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .giftName {
+    font-size: 1.5rem;
+  }
+
+  .giftSteppers {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  .giftImage {
+    height: 6rem;
+  }
+
+  .checkoutButton {
+    height: 2.4rem;
+    width: 200px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: var(--peach);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: none;
+    margin-top: 1rem;
+  }
+
+  .giftSteppersContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: flex-end;
+  }
+
+  .giftSteppersButtons {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: var(--peach);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+
+  .giftSteppers:disabled {
+    background-color: rgba(200, 200, 200, 0.5);
+    cursor: not-allowed;
+  }
+
+  .nameAndPrice {
+    display: flex;
+    gap: 1.4rem;
+    flex-direction: column;
+    width: 70vw;
+    padding-inline: 1rem;
+  }
+
+  .giftRemoveItem {
+    display: flex;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    text-decoration: underline;
+  }
+
+  .giftQuantity {
+    font-weight: bold;
+    font-size: 2rem;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .giftPrice {
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
 }
 
-.giftContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1rem;
-  margin-right: 1rem;
-}
+@media (width >= 900px) {
+  .Container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
 
-.checkoutButtonContainer {
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  margin-top: 3rem;
-}
+  .giftContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-right: 1rem;
+  }
 
-.cleanCart {
-  display: flex;
-  justify-content: flex-end;
-}
+  .checkoutButtonContainer {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-top: 3rem;
+  }
 
-.giftName {
-  padding-inline: 1rem;
-}
+  .cleanCart {
+    display: flex;
+    justify-content: flex-end;
+  }
 
-.giftImage {
-  height: 8rem;
-}
+  .giftName {
+    padding-inline: 1rem;
+  }
 
-.checkoutButton {
-  height: 2.4rem;
-  width: 200px;
-  color: white;
-  font-weight: bold;
-  font-size: 1rem;
-  background-color: var(--peach);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  border: none;
-  margin-top: 1rem;
-}
+  .giftImage {
+    height: 8rem;
+  }
 
-.giftSteppersContainer {
-  width: 16rem;
-  padding-inline: 2rem;
-  flex-direction: row;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
+  .checkoutButton {
+    height: 2.4rem;
+    width: 200px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: var(--peach);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: none;
+    margin-top: 1rem;
+  }
 
-.giftSteppers {
-  width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 100%;
-  color: white;
-  font-weight: bold;
-  font-size: 2rem;
-  background-color: var(--peach);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-}
+  .giftSteppersContainer {
+    width: 16rem;
+    padding-inline: 2rem;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
 
-.giftSteppers:disabled {
-  background-color: rgba(200, 200, 200, 0.5);
-  cursor: not-allowed;
-}
+  .giftSteppers {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    background-color: var(--peach);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
 
-.giftRemoveItem {
-  display: flex;
-  margin-top: 2rem;
-  font-size: 1rem;
-  text-decoration: underline;
-}
+  .giftSteppers:disabled {
+    background-color: rgba(200, 200, 200, 0.5);
+    cursor: not-allowed;
+  }
 
+  .giftRemoveItem {
+    display: flex;
+    margin-top: 2rem;
+    font-size: 1rem;
+    text-decoration: underline;
+  }
 
-.giftQuantity {
-  font-weight: bold;
-  font-size: 1.5rem;
-  width: 1.5rem;
-  display: flex;
-  justify-content: center;
-}
+  .giftQuantity {
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
 
-.giftPrice {
-  width: 150px;
-  font-weight: bold;
-  font-size: 1.4rem;
+  .giftPrice {
+    width: 150px;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
 }

@@ -1,122 +1,120 @@
 .giftsSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 4rem;
-    padding-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4rem;
+  padding-inline: 1rem;
 }
 
 .giftsSectionTitle {
-    font-weight: normal;
-    text-align: center;
-    color: var(--rust);
+  font-weight: normal;
+  text-align: center;
+  color: var(--rust);
 }
 
-.giftsSection>h3 {
-    font-weight: normal;
-    text-align: center;
-    color: var(--rust);
+.giftsSection > h3 {
+  font-weight: normal;
+  text-align: center;
+  color: var(--rust);
 }
 
-.giftsSection>h2 {
-    font-size: 2rem;
-    padding-top: 1rem;
+.giftsSection > h2 {
+  font-size: 2rem;
+  padding-top: 1rem;
 }
 
 .giftsSectionButtons {
-    display: flex;
-    gap: 2.25rem;
-    padding-top: 2rem
+  display: flex;
+  gap: 2.25rem;
+  padding-top: 2rem;
 }
 
 .buyGiftButton {
-    padding: 0.5rem;
-    background-color: var(--peach);
-    border-radius: 4px;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    width: 8rem;
-    border: none;
+  padding: 0.5rem;
+  background-color: var(--peach);
+  border-radius: 4px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 8rem;
+  border: none;
 }
 
-
-.giftsSectionButtons>button {
-    padding-inline: 2rem;
-    background-color: var(--rust);
-    border-radius: 4px;
-    border-width: 0px;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--white);
-    height: 3.5rem;
+.giftsSectionButtons > button {
+  padding-inline: 2rem;
+  background-color: var(--rust);
+  border-radius: 4px;
+  border-width: 0px;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--white);
+  height: 3.5rem;
 }
 
 .gridContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-    padding-top: 1.2rem;
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  padding-top: 1.2rem;
 }
 
 .disclaimer {
-    padding-top: 0.25rem;
-    color: var(--rust);
+  padding-top: 0.25rem;
+  color: var(--rust);
 }
 
 .gift {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 300px;
-    gap:0.75rem;
-    margin-bottom: 1rem
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .giftDescription {
-    font-size: 1.2rem;
-    color: var(--rust);
+  font-size: 1.2rem;
+  color: var(--rust);
 }
 
 .giftPrice {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--peach);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--peach);
 }
 
-
 .giftRemoveItem {
-    margin-top: 2rem;
-    font-size: 1rem;
-    text-decoration: underline;
-    align-self: flex-end;
-  }
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  align-self: flex-end;
+}
 
-  .checkoutButtonContainer {
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    margin-top: 3rem;
-  }
+.checkoutButtonContainer {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3rem;
+}
 
-  .checkoutButton {
-    height: 2.4rem;
-    width: 200px;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    background-color: var(--peach);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    border: none;
-    margin-top: 1rem;
-  }
+.checkoutButton {
+  height: 2.4rem;
+  width: 200px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: var(--peach);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: none;
+  margin-top: 1rem;
+}
 
-  .cartPriceText {
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
+.cartPriceText {
+  font-weight: bold;
+  font-size: 1.5rem;
+}

@@ -11,44 +11,13 @@ import { useCart } from "../../context/CartContext";
 
 export const Gifts = () => {
     const [giftsList, setGiftsList] = useState(giftMocks);
-    const isMobile = useIsMobile();
-    return (
-        <div id="Presentes" className={styles.giftsSection}>
-            <Title title="Presentes aos noivos" styles={styles.giftsSectionTitle} />
-            <h3>
-                Fique à vontade para escolher entre uma das três opções de presente
-            </h3>
-            <div className={styles.disclaimer}>
-                <p>*As imagens são meramente ilustrativas</p>
-            </div>
-            <div className={styles.giftsSectionButtons}>
-                <button onClick={() => setGiftsList(giftMocks)}>Virtuais</button>
-                <button onClick={() => setGiftsList(mockedHoneyMoon)}>
-                    Loja Física
-                </button>
-                <button onClick={() => setGiftsList(mockedPhysicalStores)}>
-                    Lua de Mel
-                </button>
-            </div>
-            <div style={{ paddingTop: "2rem" }}>
-                {isMobile ? (
-                    <SlideWindow data={giftsList} showButton={true} />
-                ) : (
-                    <GiftsListDesktop gifts={giftsList} />
-                )}
-            </div>
-        </div>
-    );
-};
-
-const GiftsListDesktop = ({ gifts }: GiftsListProps) => {
     const [isOpen, setIsOpen] = useState(false);
+    const isMobile = useIsMobile();
     const { cart, addToCart, clearCart, getTotalCartPriceInCents } = useCart();
 
     const handleBuy = (gift: Gift) => {
         addToCart({ ...gift, quantity: 1 });
         setIsOpen(true);
-        console.log(cart);
     };
 
     const handleClearCart = () => {
@@ -57,67 +26,83 @@ const GiftsListDesktop = ({ gifts }: GiftsListProps) => {
     };
 
     return (
-        <div className={styles.gridContainer}>
-            {gifts.map((gift) => {
-                return (
-                    <Card
-                        key={gift.id}
-                        imageStyles={{
-                            width: "320px",
-                            height: "210px",
-                            objectFit: "cover",
-                        }}
-                        image={gift.src}
-                        children={
-                            <div className={styles.gift}>
-                                <p className={styles.giftDescription}>{gift.description}</p>
-                                <p className={styles.giftPrice}>{gift.price}</p>
-                                <button
-                                    onClick={() => handleBuy(gift)}
-                                    className={styles.buyGiftButton}
-                                >
-                                    Comprar
-                                </button>
-                                <Modal
-                                    isOpen={isOpen && !!cart.length}
-                                    onClose={() => setIsOpen(false)}
-                                    children={
-                                        <div>
-                                            <a
-                                                className={styles.giftRemoveItem}
-                                                onClick={() => handleClearCart()}
-                                            >
-                                                Remover Tudo
-                                            </a>
-                                            <Cart />
-                                        </div>
-                                    }
-                                    footer={
-                                        <div className={styles.checkoutButtonContainer}>
-                                            <p className={styles.cartPriceText}>
-                                                Valor total: R${" "}
-                                                {(getTotalCartPriceInCents() / 100).toFixed(2)}
-                                            </p>
-                                            <button className={styles.checkoutButton}>
-                                                Finalizar Compra
-                                            </button>
-                                        </div>
-                                    }
-                                />
-                            </div>
-                        }
-                    />
-                );
-            })}
+        <div id="Presentes" className={styles.giftsSection}>
+            <Title title="Presentes aos noivos" styles={styles.giftsSectionTitle} />
+            <h3>Fique à vontade para escolher entre uma das três opções de presente</h3>
+            <div className={styles.disclaimer}>
+                <p>*As imagens são meramente ilustrativas</p>
+            </div>
+            <div className={styles.giftsSectionButtons}>
+                <button onClick={() => setGiftsList(giftMocks)}>Virtuais</button>
+                <button onClick={() => setGiftsList(mockedHoneyMoon)}>Loja Física</button>
+                <button onClick={() => setGiftsList(mockedPhysicalStores)}>Lua de Mel</button>
+            </div>
+            <div style={{ paddingTop: "2rem" }}>
+                {isMobile ? (
+                    <SlideWindow data={giftsList} showButton={true} onBuy={handleBuy} />
+                ) : (
+                    <GiftsListDesktop gifts={giftsList} onBuy={handleBuy} />
+                )}
+            </div>
+
+            <Modal
+                isOpen={isOpen && !!cart.length}
+                onClose={() => setIsOpen(false)}
+                children={
+                    <div>
+                        <a className={styles.giftRemoveItem} onClick={handleClearCart}>
+                            Remover Tudo
+                        </a>
+                        <Cart />
+                    </div>
+                }
+                footer={
+                    <div className={styles.checkoutButtonContainer}>
+                        <p className={styles.cartPriceText}>
+                            Valor total: R${(getTotalCartPriceInCents() / 100).toFixed(2)}
+                        </p>
+                        <button className={styles.checkoutButton}>Finalizar Compra</button>
+                    </div>
+                }
+            />
         </div>
     );
 };
+
+
+const GiftsListDesktop = ({ gifts, onBuy }: GiftsListProps & { onBuy: (gift: Gift) => void }) => {
+    return (
+        <div className={styles.gridContainer}>
+            {gifts.map((gift) => (
+                <Card
+                    key={gift.id}
+                    imageStyles={{
+                        width: "320px",
+                        height: "210px",
+                        objectFit: "cover",
+                    }}
+                    image={gift.src}
+                    children={
+                        <div className={styles.gift}>
+                            <p className={styles.giftDescription}>{gift.description}</p>
+                            <p className={styles.giftPrice}>{gift.price}</p>
+                            <button onClick={() => onBuy(gift)} className={styles.buyGiftButton}>
+                                Comprar
+                            </button>
+                        </div>
+                    }
+                />
+            ))}
+        </div>
+    );
+};
+
 
 const giftMocks: Gift[] = [
     {
         id: "gift-0011",
         src: "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        description: "Máquina de Lavar",
+        description: "Máquina de Lavar Com um nome um pouco mais longo",
         price: "$190.99",
         priceInCents: 19990,
         quantity: 10,
