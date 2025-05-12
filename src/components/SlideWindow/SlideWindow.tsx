@@ -14,7 +14,7 @@ type SlideWindowGeneric = {
 type SlideWindowGenericProps = {
     data: Array<SlideWindowGeneric>
     showButton?: boolean
-    onBuy: (item) => void
+    onBuy?: (item) => void
 }
 
 

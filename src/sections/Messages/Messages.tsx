@@ -1,4 +1,4 @@
-import { Title } from '../components/Title/Title'
+import { Title } from '../../components/Title/Title'
 import styles from "./Messages.module.css"
 
 export const Messages = () => {

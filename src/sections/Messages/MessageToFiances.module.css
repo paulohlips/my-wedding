@@ -1,0 +1,154 @@
+.title {
+  color: var(--rust);
+}
+@media (width >= 900px) {
+  .formContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2rem;
+    gap: 2rem;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 600px;
+  }
+
+  .name {
+    display: flex;
+    flex-direction: column;
+    color: var(--rust);
+    font-size: 2rem;
+  }
+
+  .input {
+    border-color: var(--peach);
+    box-sizing: content-box;
+    background-color: var(--peachLighter);
+    border-radius: 4px;
+    border-width: 0px;
+    padding: 0.4rem;
+    font-size: 1.6rem;
+  }
+
+  .messages {
+    color: var(--rust);
+    font-size: 2rem;
+  }
+
+  .message {
+    display: flex;
+    flex-direction: column;
+    color: var(--rust);
+    font-size: 2rem;
+  }
+
+  .submitButton {
+    padding-inline: 2rem;
+    height: 3rem;
+    background-color: var(--rust);
+    border-radius: 4px;
+    border-width: 0px;
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--white);
+  }
+
+  .submitButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .textarea {
+    display: flex;
+    border-color: var(--peach);
+    box-sizing: content-box;
+    background-color: var(--peachLighter);
+    border-radius: 4px;
+    border-width: 0px;
+    padding: 1rem;
+    font-size: 1.6rem;
+    height: 100px;
+  }
+}
+
+@media (width < 900px) {
+  .formContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2rem;
+    gap: 2rem;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 80vw;
+  }
+
+  .name {
+    display: flex;
+    flex-direction: column;
+    color: var(--rust);
+    font-size: 2rem;
+  }
+
+  .input {
+    border-color: var(--peach);
+    box-sizing: content-box;
+    background-color: var(--peachLighter);
+    border-radius: 4px;
+    border-width: 0px;
+    padding: 0.4rem;
+    font-size: 1.6rem;
+  }
+
+  .messages {
+    color: var(--rust);
+    font-size: 2rem;
+  }
+
+  .message {
+    display: flex;
+    flex-direction: column;
+    color: var(--rust);
+    font-size: 2rem;
+  }
+
+  .submitButton {
+    padding-inline: 2rem;
+    height: 3rem;
+    background-color: var(--rust);
+    border-radius: 4px;
+    border-width: 0px;
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--white);
+  }
+
+  .submitButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .textarea {
+    display: flex;
+    border-color: var(--peach);
+    box-sizing: content-box;
+    background-color: var(--peachLighter);
+    border-radius: 4px;
+    border-width: 0px;
+    padding: 1rem;
+    font-size: 1.6rem;
+    height: 100px;
+  }
+}
