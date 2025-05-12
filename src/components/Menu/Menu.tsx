@@ -11,14 +11,16 @@ export const Menu = () => {
 
 const DesktopMenu = () => {
     return (
-        <div className={styles.desktopMenuContainer}>
-            <nav className={styles.desktopMenu}>
-                <a className={styles.sectionLink} href="#NossaHistoria">Nossa História</a>
-                <a className={styles.sectionLink} href="#Padrinhos">Padrinhos</a>
-                <a className={styles.sectionLink} href="#MensagemAosNoivos">Mensagens aos noivos</a>
-                <a className={styles.sectionLink} href="#Presentes">Presentes</a>
-                <a className={styles.sectionLink} href="#ConfirmarPresenca">Confirmar Presença</a>
-                <a className={styles.sectionLink} href="#Localizacao">Localização</a>
+        <div>
+            <nav className={styles.desktopNav}>
+                <div className={styles.menuItems}>
+                    <a className={styles.sectionLink} href="#NossaHistoria">Nossa História</a>
+                    <a className={styles.sectionLink} href="#Padrinhos">Padrinhos</a>
+                    <a className={styles.sectionLink} href="#MensagemAosNoivos">Mensagens aos noivos</a>
+                    <a className={styles.sectionLink} href="#Presentes">Presentes</a>
+                    <a className={styles.sectionLink} href="#ConfirmarPresenca">Confirmar Presença</a>
+                    <a className={styles.sectionLink} href="#Localizacao">Localização</a>
+                </div>
             </nav>
         </div>
     )

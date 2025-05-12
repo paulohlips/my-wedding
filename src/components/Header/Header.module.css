@@ -1,41 +1,40 @@
 .header {
-    background-image: url("../../../src/assets/images/background.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
+  background-image: url("../../../src/assets/images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
-
-@media (max-width: 1024px) {
-    .bannerAndCountdown {
-        padding-top: 25%;
-    }
+@media (width < 900px) {
+  .bannerAndCountdown {
+    padding-top: 25%;
+  }
 }
 
 .welcomeTile {
-    background-color: var(--peach);
-    height: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5vh;
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-    /* font-size: clamp(1.5rem, 2vw, 2.5rem); */
+  background-color: var(--peach);
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .welcomeTile p {
-    color: var(--white);
-    font-size: 2.5rem;
+  color: var(--white);
+  font-size: 2.5rem;
 }
 
 .bannerContainer {
-    display: flex;
-    justify-content: center;
-    padding-top: 10vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 10vh;
 }
 
-.bannerContainer>img {
-    max-height: 40vw;
+.bannerContainer > img {
+  max-height: 40vw;
 }
