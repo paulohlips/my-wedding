@@ -18,7 +18,7 @@ export const Header = () => {
 const Banner = () => {
     return (
         <div className={styles.bannerContainer}>
-            <img src="src/assets/images/monogram.png" />
+            <img src="/assets/images/monogram.png" />
         </div>
     )
 }

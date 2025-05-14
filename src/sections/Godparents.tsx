@@ -16,32 +16,32 @@ export const Godparents = () => {
 const mockedData = [
     {
         id: 100 * Math.random(),
-        src: "src/assets/images/godparents-isla.jpeg",
+        src: "/assets/images/godparents-isla.jpeg",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, consequatur. Impedit laboriosam reiciendis veniam facere cupiditate dolor. Ex odio, rem esse aspernatur voluptatum officia quibusdam repellendus, est, natus unde iusto!"
     },
     {
         id: 100 * Math.random(),
-        src: "src/assets/images/godparents-isla.jpeg",
+        src: "/assets/images/godparents-isla.jpeg",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, consequatur. Impedit laboriosam reiciendis veniam facere cupiditate dolor. Ex odio, rem esse aspernatur voluptatum officia quibusdam repellendus, est, natus unde iusto!"
     },
     {
         id: 100 * Math.random(),
-        src: "src/assets/images/godparents-isla.jpeg",
+        src: "/assets/images/godparents-isla.jpeg",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, consequatur. Impedit laboriosam reiciendis veniam facere cupiditate dolor. Ex odio, rem esse aspernatur voluptatum officia quibusdam repellendus, est, natus unde iusto!"
     },
     {
         id: 100 * Math.random(),
-        src: "src/assets/images/godparents-isla.jpeg",
+        src: "/assets/images/godparents-isla.jpeg",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, consequatur. Impedit laboriosam reiciendis veniam facere cupiditate dolor. Ex odio, rem esse aspernatur voluptatum officia quibusdam repellendus, est, natus unde iusto!"
     },
     {
         id: 100 * Math.random(),
-        src: "src/assets/images/godparents-isla.jpeg",
+        src: "/assets/images/godparents-isla.jpeg",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, consequatur. Impedit laboriosam reiciendis veniam facere cupiditate dolor. Ex odio, rem esse aspernatur voluptatum officia quibusdam repellendus, est, natus unde iusto!"
     },
     {
         id: 100 * Math.random(),
-        src: "src/assets/images/godparents-isla.jpeg",
+        src: "/assets/images/godparents-isla.jpeg",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, consequatur. Impedit laboriosam reiciendis veniam facere cupiditate dolor. Ex odio, rem esse aspernatur voluptatum officia quibusdam repellendus, est, natus unde iusto!"
     }
 ];
