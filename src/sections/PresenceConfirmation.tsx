@@ -4,11 +4,11 @@ import { Modal } from "../components/Modal/Modal"
 import { Title } from '../components/Title/Title'
 
 export const PresenceConfirmation = () => {
-    const [inviteAccepted, sentInviteAccepted] = useState<boolean>(false)
+    //const [inviteAccepted, sentInviteAccepted] = useState<boolean>(false)
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 
     const handleInvited = (input: boolean) => {
-        sentInviteAccepted(input)
+        //sentInviteAccepted(input)
         setIsModalOpen(input)
     }
 

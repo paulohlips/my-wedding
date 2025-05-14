@@ -14,7 +14,7 @@ type SlideWindowGeneric = {
 type SlideWindowGenericProps = {
     data: Array<SlideWindowGeneric>
     showButton?: boolean
-    onBuy?: (item) => void
+    onBuy?: (item: any) => void
 }
 
 
@@ -57,7 +57,7 @@ export const SlideWindow = ({ data, showButton, onBuy }: SlideWindowGenericProps
                                         <div className={styles.cardContainer}>
                                             {card.description ? <p className={styles.cardDescription}>{card.description}</p> : null}
                                             {card.price ? <p className={styles.cardPrice}>{card.price}</p> : null}
-                                            {showButton ? <button onClick={() => onBuy(card)} className={styles.buyGiftButton}>Comprar</button> : null}
+                                            {showButton ? <button onClick={() => onBuy?.(card)} className={styles.buyGiftButton}>Comprar</button> : null}
                                         </div>
                                     }
                                 />

@@ -4,7 +4,7 @@ import { IoCloseCircleOutline } from "react-icons/io5";
 
 type ModalPropsType = {
     children: ReactNode;
-    footer: ReactNode;
+    footer?: ReactNode;
     isOpen: boolean;
     onClose: () => void;
 }
