@@ -1,6 +1,7 @@
 import { CountDown } from "../CountDown/CountDown"
 import { Menu } from "../Menu/Menu"
 import styles from './Header.module.css'
+import monogram from '../../assets/images/monogram.png'
 
 export const Header = () => {
     return (
@@ -18,7 +19,7 @@ export const Header = () => {
 const Banner = () => {
     return (
         <div className={styles.bannerContainer}>
-            <img src="/assets/images/monogram.png" />
+            <img src={monogram} />
         </div>
     )
 }
