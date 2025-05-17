@@ -16,7 +16,7 @@
 }
 
 .title {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 8px;
   display: flex;
@@ -42,14 +42,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
+  padding-top: 2rem;
 }
 
 .pixContainerBankData {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
 }
 
 .copyQrCode {

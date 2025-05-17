@@ -7,7 +7,6 @@ import { Messages } from './sections/Messages/Messages'
 import { MessageToFiances } from './sections/Messages/MessageToFiances'
 import { PresenceConfirmation } from './sections/PresenceConfirmation'
 import { Map } from './sections/Map/Map'
-import { Pix } from './sections/Payments/Pix'
 
 export default function App() {
   return (
@@ -18,7 +17,6 @@ export default function App() {
         backgroundRepeat: 'repeat',
         backgroundSize: 'contain',
       }}>
-        <Pix />
         <div><Fiances /></div>
         <div><Godparents /></div>
         <div><MessageToFiances /></div>

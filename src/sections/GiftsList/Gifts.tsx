@@ -101,7 +101,7 @@ const SetPaymentTile = ({ paymentMethod, setPaymentMethod }: { paymentMethod: st
                 <div className={styles.paymentType} onClick={() => setPaymentMethod('pix')}>
                     <input type="radio" checked={paymentMethod === 'pix'} />
                     <img src={pixLogo} width={32} height={32} />
-                    <p>Pix à vista</p>
+                    <p className={styles.methodName}>Pix à vista</p>
                 </div>
                 <div className={styles.paymentType} onClick={() => setPaymentMethod('card')}>
                     <input type="radio" checked={paymentMethod === 'card'} />
@@ -109,7 +109,7 @@ const SetPaymentTile = ({ paymentMethod, setPaymentMethod }: { paymentMethod: st
                     <span className={styles.icons}>
                         <FaCreditCard />
                     </span>
-                    <p>Cartão de crédito ou débito</p>
+                    <p className={styles.methodName}>Cartão de crédito</p>
                 </div>
             </div>
         </div>

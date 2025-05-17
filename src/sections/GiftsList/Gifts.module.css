@@ -139,6 +139,11 @@
   margin-bottom: 8px;
 }
 
+.methodName {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 .paymentType {
   display: flex;
   flex-direction: row;
