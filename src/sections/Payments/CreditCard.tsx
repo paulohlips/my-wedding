@@ -69,7 +69,6 @@ export const CreditCard = () => {
   return (
     <form id="form-checkout" className={styles.form}>
       <h2 className={styles.title}>
-        Cartão de crédito ou débito
         <span className={styles.icons}>
           <FaCcVisa />
           <FaCcMastercard />
