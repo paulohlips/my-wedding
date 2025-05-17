@@ -1,54 +1,40 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { loadMercadoPago } from "@mercadopago/sdk-js";
 import { FaLock, FaCcVisa, FaCcMastercard, FaCcAmex, FaCcDinersClub } from 'react-icons/fa';
-
 import styles from './payments.module.css';
 
-await loadMercadoPago();
-const mp = new (window as any).MercadoPago('TEST-80f39e67-a4c2-46fe-bbea-d1a4ff5a7d3b');
-
 export const CreditCard = () => {
+  const [mpInstance, setMpInstance] = useState<any>(null);
+
   useEffect(() => {
-    const cardForm = mp.cardForm({
+    const initMercadoPago = async () => {
+      await loadMercadoPago();
+      const mp = new (window as any).MercadoPago('TEST-80f39e67-a4c2-46fe-bbea-d1a4ff5a7d3b');
+      setMpInstance(mp);
+    };
+
+    initMercadoPago();
+  }, []);
+
+  useEffect(() => {
+    if (!mpInstance) return;
+
+    const cardForm = mpInstance.cardForm({
       amount: '430',
       autoMount: true,
       form: {
         id: 'form-checkout',
-        cardNumber: {
-          id: 'form-checkout__cardNumber',
-          placeholder: '1234 1234 1234 1234',
-        },
-        expirationDate: {
-          id: 'form-checkout__expirationDate',
-          placeholder: 'MM/AA',
-        },
-        securityCode: {
-          id: 'form-checkout__securityCode',
-          placeholder: '123',
-        },
-        cardholderName: {
-          id: 'form-checkout__cardholderName',
-          placeholder: 'Nome como no cartão',
-        },
-        issuer: {
-          id: 'form-checkout__issuer',
-        },
-        installments: {
-          id: 'form-checkout__installments',
-        },
-        identificationType: {
-          id: 'form-checkout__identificationType',
-        },
-        identificationNumber: {
-          id: 'form-checkout__identificationNumber',
-          placeholder: 'Número do documento',
-        },
-        cardholderEmail: {
-          id: 'form-checkout__cardholderEmail',
-          placeholder: 'E-mail',
-        },
+        cardNumber: { id: 'form-checkout__cardNumber', placeholder: '1234 1234 1234 1234' },
+        expirationDate: { id: 'form-checkout__expirationDate', placeholder: 'MM/AA' },
+        securityCode: { id: 'form-checkout__securityCode', placeholder: '123' },
+        cardholderName: { id: 'form-checkout__cardholderName', placeholder: 'Nome como no cartão' },
+        issuer: { id: 'form-checkout__issuer' },
+        installments: { id: 'form-checkout__installments' },
+        identificationType: { id: 'form-checkout__identificationType' },
+        identificationNumber: { id: 'form-checkout__identificationNumber', placeholder: 'Número do documento' },
+        cardholderEmail: { id: 'form-checkout__cardholderEmail', placeholder: 'E-mail' },
       },
       callbacks: {
         onFormMounted: (error: any) => {
@@ -57,6 +43,7 @@ export const CreditCard = () => {
         onSubmit: async (event: any) => {
           event.preventDefault();
           const data = cardForm.getCardFormData();
+
           const res = await fetch('http://localhost:3000/createPayment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -77,7 +64,7 @@ export const CreditCard = () => {
         },
       },
     });
-  }, []);
+  }, [mpInstance]);
 
   return (
     <form id="form-checkout" className={styles.form}>
@@ -91,26 +78,24 @@ export const CreditCard = () => {
         </span>
       </h2>
 
+      {/* Inputs do cartão */}
       <div className={styles.field}>
         <span>Número do cartão</span>
-        <input type="text" id="form-checkout__cardNumber" placeholder="Ex: 5031 4332 1540 6351" />
+        <input type="text" id="form-checkout__cardNumber" />
       </div>
-
       <div className={styles.container}>
         <div>
           <span>Vencimento</span>
-          <input type="text" id="form-checkout__expirationDate" placeholder="Ex: 09/25" />
+          <input type="text" id="form-checkout__expirationDate" />
         </div>
         <div>
           <span>Código de Segurança</span>
-          <input type="text" id="form-checkout__securityCode" placeholder="Ex: 123" />
+          <input type="text" id="form-checkout__securityCode" />
         </div>
       </div>
-
-
       <div>
         <span>Nome do titular como no cartão</span>
-        <input type="text" id="form-checkout__cardholderName" placeholder="" />
+        <input type="text" id="form-checkout__cardholderName" />
       </div>
       <select id="form-checkout__issuer" />
       <select id="form-checkout__installments" />
@@ -123,7 +108,6 @@ export const CreditCard = () => {
       <button type="submit" id="form-checkout__submit" className={styles.checkoutButton}>
         <FaLock /> Pagar
       </button>
-
       <progress value="0" className={styles.progressBar}>Carregando...</progress>
     </form>
   );
