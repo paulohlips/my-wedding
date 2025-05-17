@@ -38,6 +38,40 @@
   gap: 1rem;
 }
 
+.pixContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+}
+
+.pixContainerBankData {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+.copyQrCode {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 22rem;
+  border-radius: 8px;
+  border-color: var(--rust);
+  border-width: 1px;
+  border-style: solid;
+  margin-top: 2rem;
+}
+
+.copyQrCodeTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .identificationType {
   width: 70px;
 }
@@ -46,7 +80,40 @@
   background-color: var(--peach);
 }
 
-.pix {
+.backDataContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 90%;
+}
+
+.backData {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.backDataKey {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.backDataValue {
+  font-size: 1.5rem;
+}
+
+.copyRandomKey {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.copyRandomKeyText {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 }
 
 input,
@@ -107,10 +174,3 @@ button:hover {
 .error {
   border: 1px solid red !important;
 }
-
-/* .error {
-  color: red;
-  font-size: 0.9rem;
-  margin-top: 4px;
-}
- */
