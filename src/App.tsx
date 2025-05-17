@@ -7,13 +7,11 @@ import { Messages } from './sections/Messages/Messages'
 import { MessageToFiances } from './sections/Messages/MessageToFiances'
 import { PresenceConfirmation } from './sections/PresenceConfirmation'
 import { Map } from './sections/Map/Map'
-// import { CheckoutForm } from './sections/Payments/CheckoutForm'
 
 export default function App() {
   return (
     <div>
       <Header />
-      {/* <div><CheckoutForm/></div> */}
       <div style={{
         backgroundImage: "url(" + "../../../src/assets/images/background.png" + ")",
         backgroundRepeat: 'repeat',
