@@ -8,12 +8,16 @@ import { Modal } from "../../components/Modal/Modal";
 import { Cart } from "../../components/Cart/Cart";
 import { Gift, GiftsListProps } from "../../context/CartContext";
 import { useCart } from "../../context/CartContext";
-import { CheckoutForm } from "../Payments/CheckoutForm";
+import { CreditCard } from "../Payments/CreditCard";
+import { FaCreditCard } from 'react-icons/fa';
+import pixLogo from '../../assets/images/pix.png'
+import { Pix } from "../Payments/Pix";
 
 export const Gifts = () => {
     const [giftsList, setGiftsList] = useState(giftMocks);
     const [isOpenCart, setIsOpenCart] = useState(false);
     const [isOpenToPay, setIsOpenToPay] = useState(false);
+    const [paymentMethod, setPaymentMethod] = useState('pix')
     const isMobile = useIsMobile();
     const { cart, addToCart, clearCart, getTotalCartPriceInCents } = useCart();
 
@@ -76,15 +80,41 @@ export const Gifts = () => {
             <Modal
                 isOpen={isOpenToPay}
                 onClose={() => setIsOpenToPay(false)}
+                header={<SetPaymentTile paymentMethod={paymentMethod} setPaymentMethod={setPaymentMethod} />}
                 children={
                     <div>
-                        <CheckoutForm />
+                        {paymentMethod === 'pix' ? <Pix /> : <CreditCard />}
                     </div>
                 }
             />
         </div>
     );
 };
+
+const SetPaymentTile = ({ paymentMethod, setPaymentMethod }: { paymentMethod: string, setPaymentMethod: (paymentMethod: string) => void }) => {
+    return (
+        <div className={styles.paymentTypeContainer}>
+            <div className={styles.paymentTile}>
+                <p className={styles.tileTitle}>Escolha a forma de pagamento</p>
+            </div>
+            <div className={styles.paymentMethods}>
+                <div className={styles.paymentType} onClick={() => setPaymentMethod('pix')}>
+                    <input type="radio" checked={paymentMethod === 'pix'} />
+                    <img src={pixLogo} width={32} height={32} />
+                    <p>Pix à vista</p>
+                </div>
+                <div className={styles.paymentType} onClick={() => setPaymentMethod('card')}>
+                    <input type="radio" checked={paymentMethod === 'card'} />
+
+                    <span className={styles.icons}>
+                        <FaCreditCard />
+                    </span>
+                    <p>Cartão de crédito ou débito</p>
+                </div>
+            </div>
+        </div>
+    )
+}
 
 
 const GiftsListDesktop = ({ gifts, onBuy }: GiftsListProps & { onBuy: (gift: Gift) => void }) => {

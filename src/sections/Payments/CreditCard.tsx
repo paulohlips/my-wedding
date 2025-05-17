@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// src/components/CheckoutForm.tsx
+
 import { useEffect } from 'react';
 import { loadMercadoPago } from "@mercadopago/sdk-js";
 import { FaLock, FaCcVisa, FaCcMastercard, FaCcAmex, FaCcDinersClub } from 'react-icons/fa';
 
-import styles from './CheckoutForm.module.css';
+import styles from './payments.module.css';
 
 await loadMercadoPago();
 const mp = new (window as any).MercadoPago('TEST-80f39e67-a4c2-46fe-bbea-d1a4ff5a7d3b');
 
-export const CheckoutForm = () => {
+export const CreditCard = () => {
   useEffect(() => {
     const cardForm = mp.cardForm({
-      amount: 430,
+      amount: '430',
       autoMount: true,
       form: {
         id: 'form-checkout',
@@ -120,7 +120,7 @@ export const CheckoutForm = () => {
       </div>
       <input type="email" id="form-checkout__cardholderEmail" placeholder="E-mail" />
 
-      <button type="submit" id="form-checkout__submit">
+      <button type="submit" id="form-checkout__submit" className={styles.checkoutButton}>
         <FaLock /> Pagar
       </button>
 

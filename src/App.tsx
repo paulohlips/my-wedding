@@ -7,18 +7,18 @@ import { Messages } from './sections/Messages/Messages'
 import { MessageToFiances } from './sections/Messages/MessageToFiances'
 import { PresenceConfirmation } from './sections/PresenceConfirmation'
 import { Map } from './sections/Map/Map'
-// import { CheckoutForm } from './sections/Payments/CheckoutForm'
+import { Pix } from './sections/Payments/Pix'
 
 export default function App() {
   return (
     <div>
       <Header />
-      {/* <div><CheckoutForm/></div> */}
       <div style={{
         backgroundImage: "url(" + "../../../src/assets/images/background.png" + ")",
         backgroundRepeat: 'repeat',
         backgroundSize: 'contain',
       }}>
+        <Pix />
         <div><Fiances /></div>
         <div><Godparents /></div>
         <div><MessageToFiances /></div>
