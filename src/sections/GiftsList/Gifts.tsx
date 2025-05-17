@@ -8,22 +8,29 @@ import { Modal } from "../../components/Modal/Modal";
 import { Cart } from "../../components/Cart/Cart";
 import { Gift, GiftsListProps } from "../../context/CartContext";
 import { useCart } from "../../context/CartContext";
+import { CheckoutForm } from "../Payments/CheckoutForm";
 
 export const Gifts = () => {
     const [giftsList, setGiftsList] = useState(giftMocks);
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpenCart, setIsOpenCart] = useState(false);
+    const [isOpenToPay, setIsOpenToPay] = useState(false);
     const isMobile = useIsMobile();
     const { cart, addToCart, clearCart, getTotalCartPriceInCents } = useCart();
 
     const handleBuy = (gift: Gift) => {
         addToCart({ ...gift, quantity: 1 });
-        setIsOpen(true);
+        setIsOpenCart(true);
     };
 
     const handleClearCart = () => {
         clearCart();
-        setIsOpen(false);
+        setIsOpenCart(false);
     };
+
+    const handlePay = () => {
+        setIsOpenToPay(true)
+        setIsOpenCart(false)
+    }
 
     return (
         <div id="Presentes" className={styles.giftsSection}>
@@ -46,8 +53,8 @@ export const Gifts = () => {
             </div>
 
             <Modal
-                isOpen={isOpen && !!cart.length}
-                onClose={() => setIsOpen(false)}
+                isOpen={isOpenCart && !!cart.length}
+                onClose={() => setIsOpenCart(false)}
                 children={
                     <div>
                         <a className={styles.giftRemoveItem} onClick={handleClearCart}>
@@ -61,7 +68,17 @@ export const Gifts = () => {
                         <p className={styles.cartPriceText}>
                             Valor total: R${(getTotalCartPriceInCents() / 100).toFixed(2)}
                         </p>
-                        <button className={styles.checkoutButton}>Finalizar Compra</button>
+                        <button className={styles.checkoutButton} onClick={handlePay}>Finalizar Compra</button>
+                    </div>
+                }
+            />
+
+            <Modal
+                isOpen={isOpenToPay}
+                onClose={() => setIsOpenToPay(false)}
+                children={
+                    <div>
+                        <CheckoutForm />
                     </div>
                 }
             />
