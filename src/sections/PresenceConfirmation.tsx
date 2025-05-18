@@ -12,7 +12,6 @@ export const PresenceConfirmation = () => {
         setIsModalOpen(input)
     }
 
-
     const handleClose = () => {
         setIsModalOpen(false);
     }

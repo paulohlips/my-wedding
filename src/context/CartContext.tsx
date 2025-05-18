@@ -20,7 +20,8 @@ export type CartContextType = {
   removeFromCart: (itemId: string) => void;
   clearCart: () => void;
   changeItemQuantity: (intemId: string, operationType: "decrease" | "increase") => void;
-  getTotalCartPriceInCents: () => number
+  getTotalCartPriceInCents: () => number;
+  getCartItemQuantity: () => number;
 };
 
 const CartContext = createContext<CartContextType | null>(null);
@@ -40,8 +41,13 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    if (cart.length > 0) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    } else {
+      localStorage.removeItem('cart');
+    }
   }, [cart]);
+
 
   const addToCart = (item: Gift) => {
     setCart((prevCart) => {
@@ -61,25 +67,17 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
   const changeItemQuantity = (itemId: string, operationType: "decrease" | "increase") => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find((cartItem) => cartItem.id === itemId);
-      const changeValue = operationType === "increase" ? 1 : -1
+      return prevCart.flatMap((cartItem) => {
+        if (cartItem.id !== itemId) return [cartItem];
 
-      if (!existingItem) {
-        return prevCart
-      }
+        const changeValue = operationType === "increase" ? 1 : -1;
+        const newQuantity = cartItem.quantity + changeValue;
 
-      if (operationType === "decrease" && existingItem?.quantity == 1) {
-        removeFromCart(existingItem.id)
-      }
-
-      return prevCart.map((cartItem: Gift) =>
-        cartItem.id === itemId
-          ? { ...cartItem, quantity: cartItem.quantity + changeValue }
-          : cartItem
-      );
-
+        return newQuantity > 0 ? [{ ...cartItem, quantity: newQuantity }] : [];
+      });
     });
   };
+
 
   const removeFromCart = (itemId: string) => {
     setCart((prevCart: Gift[]) => {
@@ -93,8 +91,12 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     return cart.reduce((totalPrice, item) => totalPrice + (item.priceInCents * item.quantity), 0)
   }
 
+  const getCartItemQuantity = () => {
+    return cart.reduce((qtd, item) => qtd + (item.quantity), 0)
+  }
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, changeItemQuantity, getTotalCartPriceInCents }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, changeItemQuantity, getTotalCartPriceInCents, getCartItemQuantity }}>
       {children}
     </CartContext.Provider>
   );

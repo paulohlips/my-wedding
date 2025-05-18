@@ -7,10 +7,13 @@ import { Messages } from './sections/Messages/Messages'
 import { MessageToFiances } from './sections/Messages/MessageToFiances'
 import { PresenceConfirmation } from './sections/PresenceConfirmation'
 import { Map } from './sections/Map/Map'
+import { Menu } from './components/Menu/Menu'
+import styles from "./App.module.css"
 
 export default function App() {
   return (
     <div>
+      <div className={styles.menu}><Menu /></div>
       <Header />
       <div style={{
         backgroundImage: "url(" + "../../../src/assets/images/background.png" + ")",

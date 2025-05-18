@@ -17,7 +17,7 @@
   flex-direction: column;
   padding: 0;
   margin: 0;
-  gap: 0.75rem;
+  gap: 0.9rem;
   position: relative;
   padding: 1rem;
   background-color: #fefefe;
@@ -41,25 +41,70 @@
   font-size: 2rem;
 }
 
-.desktopNav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .menuItems {
   display: flex;
-  gap: 4rem;
+  background-color: var(--peach);
+  padding-inline: 2rem;
+  justify-content: center;
+  height: 4rem;
+}
+
+.internalContainer {
+  display: flex;
+  padding-inline: 2rem;
+  justify-content: center;
+  max-width: 80vw;
+}
+
+.menuOption {
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuOption:hover {
+  background-color: var(--peachLighter);
 }
 
 .sectionLink {
-  flex: auto;
-  color: var(--peach);
-  font-size: 2rem;
+  color: #fff;
+  font-size: 1.4rem;
   text-decoration: none;
-  padding-top: 1rem;
 }
 
-.sectionLink:hover {
-  color: var(--peachDarker);
+@media (width < 900px) {
+  .sectionLink {
+    color: var(--peach);
+    font-size: 1.8rem;
+    text-decoration: none;
+  }
+}
+
+.checkoutButtonContainer {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.cartPriceText {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.checkoutButton {
+  height: 3.4rem;
+  width: 200px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  background-color: var(--peach);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: none;
+  margin-top: 1rem;
 }

@@ -91,7 +91,7 @@ export const Gifts = () => {
     );
 };
 
-const SetPaymentTile = ({ paymentMethod, setPaymentMethod }: { paymentMethod: string, setPaymentMethod: (paymentMethod: string) => void }) => {
+export const SetPaymentTile = ({ paymentMethod, setPaymentMethod }: { paymentMethod: string, setPaymentMethod: (paymentMethod: string) => void }) => {
     return (
         <div className={styles.paymentTypeContainer}>
             <div className={styles.paymentTile}>

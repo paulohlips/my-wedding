@@ -1,12 +1,10 @@
 import { CountDown } from "../CountDown/CountDown"
-import { Menu } from "../Menu/Menu"
 import styles from './Header.module.css'
 import monogram from '../../assets/images/monogram.png'
 
 export const Header = () => {
     return (
         <div className={styles.header}>
-            <Menu />
             <Banner />
             <div className={styles.bannerAndCountdown}>
                 <CountDown />
