@@ -19,6 +19,7 @@
     border-color: var(--peach);
     border-style: solid;
     border-radius: 4px;
+    max-height: 100vh;
   }
   .scrollArea {
     min-width: 600px;
