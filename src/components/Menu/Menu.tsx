@@ -91,36 +91,84 @@ const DesktopMenu = () => {
 }
 
 const MobileMenu = () => {
-    const [isClicked, setIsClicked] = useState(false)
+    const [isClicked, setIsClicked] = useState(false);
+    const [openCart, setOpenCart] = useState(false);
+    const [isOpenToPay, setIsOpenToPay] = useState(false);
+    const [paymentMethod, setPaymentMethod] = useState("pix");
+
+    const { getCartItemQuantity, getTotalCartPriceInCents } = useCart();
+    const cartItemsQuantity = getCartItemQuantity();
 
     const handleIsClicked = () => {
-        setIsClicked(!isClicked)
-    }
+        setIsClicked(!isClicked);
+    };
+
+    const handleOpenCart = () => {
+        if (cartItemsQuantity) {
+            setOpenCart(true);
+        }
+        setIsClicked(false);
+    };
+
+    const handlePay = () => {
+        setIsOpenToPay(true);
+        setOpenCart(false);
+    };
 
     return (
         <div className={styles.mobileMenu}>
-            {
-                !isClicked
-                    ? <div className={styles.mobileMenuNavClosed}>
-                        <div className={styles.hamburgerIconContainer}>
-                            <GiHamburgerMenu size={36} color='#A84424' onClick={handleIsClicked} />
-                        </div>
+            {!isClicked ? (
+                <div className={styles.mobileMenuNavClosed}>
+                    <div className={styles.hamburgerIconContainer}>
+                        <GiHamburgerMenu size={36} color="#A84424" onClick={handleIsClicked} />
+                    </div>
+                </div>
+            ) : (
+                <div className={styles.modal} onClick={handleIsClicked}>
+                    <nav className={styles.mobileMenuNavOpened} onClick={handleIsClicked}>
+                        <a className={styles.sectionLink} href="#NossaHistoria">Nossa História</a>
+                        <a className={styles.sectionLink} href="#Padrinhos">Padrinhos</a>
+                        <a className={styles.sectionLink} href="#MensagemAosNoivos">Mensagens aos noivos</a>
+                        <a className={styles.sectionLink} href="#Presentes">Presentes</a>
+                        <a className={styles.sectionLink} href="#ConfirmarPresenca">Confirmar Presença</a>
+                        <a className={styles.sectionLink} href="#Localizacao">Localização</a>
+                        <a className={styles.sectionLink} onClick={handleOpenCart}>Carrinho</a>
+                    </nav>
+                </div>
+            )}
 
+            <Modal
+                children={<Cart />}
+                isOpen={openCart && !!cartItemsQuantity}
+                onClose={() => setOpenCart(false)}
+                footer={
+                    <div className={styles.checkoutButtonContainer}>
+                        <p className={styles.cartPriceText}>
+                            Valor total: R${(getTotalCartPriceInCents() / 100).toFixed(2)}
+                        </p>
+                        <button className={styles.checkoutButton} onClick={handlePay}>
+                            Finalizar Compra
+                        </button>
                     </div>
-                    :
-                    <div className={styles.modal} onClick={handleIsClicked}>
-                        <nav className={styles.mobileMenuNavOpened} onClick={handleIsClicked}>
-                            <a className={styles.sectionLink} href="#NossaHistoria">Nossa História</a>
-                            <a className={styles.sectionLink} href="#Padrinhos">Padrinhos</a>
-                            <a className={styles.sectionLink} href="#MensagemAosNoivos">Mensagens aos noivos</a>
-                            <a className={styles.sectionLink} href="#Presentes">Presentes</a>
-                            <a className={styles.sectionLink} href="#ConfirmarPresenca">Confirmar Presença</a>
-                            <a className={styles.sectionLink} href="#Localizacao">Localização</a>
-                        </nav>
-                    </div>
-            }
-        </div >
-    )
-}
+                }
+            />
+
+            <Modal
+                isOpen={isOpenToPay}
+                onClose={() => setIsOpenToPay(false)}
+                header={
+                    <SetPaymentTile
+                        paymentMethod={paymentMethod}
+                        setPaymentMethod={setPaymentMethod}
+                    />
+                }
+                children={
+                    paymentMethod === "pix" ? <Pix /> : <CreditCard />
+                }
+            />
+        </div>
+    );
+};
+
 
 
